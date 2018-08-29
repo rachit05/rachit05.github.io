@@ -9,5 +9,13 @@
 </head>
 <body>
     <h1>Wanderer.</h1>
+    <input type="text" name="username" placeholder="Username">
+
+    <script>
+        let username = document.querySelector('[name=username]');
+        username.addEventListener('keyup',function(){
+            console.log(this.value)
+        })
+    </script>
 </body>
 </html>
