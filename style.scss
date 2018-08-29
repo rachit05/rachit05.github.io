@@ -7,10 +7,49 @@ html,body{
     box-sizing: border-box;
     font-family: montserrat;
 }
+nav{
+    display: grid;
+    grid-template-columns: 30% auto;
+    padding:10px 20px;
+    background: rgb(236, 236, 236);
+    .restNav{
+        justify-self: right;
+
+        a{
+            text-decoration: none;
+            color:black;
+            padding:2px 5px;
+
+            &:hover{
+                background: #000;
+                color:#fff
+            }
+        }
+    }
+}
+main{
+    display: grid;
+    height: 93%;
+    grid-template-rows:30% auto;
+}
 h1{
     font-size:3em;
-    text-align: center;
-    color:#222;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#000;
+    background:{
+        image:url('//unsplash.it/500/500/?image=127');
+        repeat:no-repeat;
+        size:cover;
+    }
+}
+.wrapper{
+    // background: #000;
+    display: grid;
+    justify-content: center;
+    padding:20px 0;
 }
 #searchText{
     background:#eee;
@@ -21,14 +60,6 @@ h1{
     max-width: 60vw;
     height: 60px;
     max-height: 40px;
-    position: absolute;
-    top:20%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
     transition: all 0.2s;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
@@ -41,8 +72,8 @@ h1{
 
     &:focus{
         background: #444;
-        max-height: 60px;
-        max-width: 80vw;
+        max-height: 50px;
+        max-width: 70vw;
         color:#fff;
 
         &::placeholder{
@@ -52,14 +83,7 @@ h1{
 }
 
 #response{
-    position: absolute;
-    top:30%;
-    left:50%;
-    transform: translate(-50%,0%);
-    -webkit-transform: translate(-50%,0%);
-    -moz-transform: translate(-50%,0%);
-    -ms-transform: translate(-50%,0%);
-    -o-transform: translate(-50%,0%);
+    
     width:50vw;
     padding: 20px;
     box-shadow:0 20px 15px -15px rgba($color:#000000,$alpha: 0.1);
