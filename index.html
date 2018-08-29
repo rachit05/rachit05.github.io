@@ -8,14 +8,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Wanderer.</h1>
-    <input type="text" name="username" placeholder="Username">
-    <p></p>
+    <h1>AskMe Buddy!</h1>
+    <input type="text" id="searchText" placeholder="Search Here">   
+    <div id="response"></div>
+
+    <!-- <script src="https://unpkg.com/wtf_wikipedia@latest/builds/wtf_wikipedia.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script>
-        let username = document.querySelector('[name=username]');
-        username.addEventListener('keyup',function(){
-            document.querySelector('p').innerHTML = this.value;
-        })
+        let term = document.getElementById('searchText');
+        let div = document.getElementById('response');
+        let response = [];
+
+        term.addEventListener('keyup',handleSearch);
+
+        function handleSearch(){
+            // wtf.fetch(term).then(data => {
+            //     sections =  data.sections();
+            // })  
+            $.ajax({
+                url:`https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=${this.value}`,
+                method:'get',
+                dataType:'jsonp',
+                jsonp:"callback",
+                success:function(data){
+                    if(data[1].length != 0){
+                        response = data[1].map(item => `<li class="items">${item}</li>`).join('');
+                        div.innerHTML = response;
+                        // console.log(response)
+                    }else{
+                        response = "Nothing matched"
+                        div.innerHTML = response;
+                    }
+                }
+            })
+
+        }
     </script>
 </body>
 </html>
+<!-- // https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=delhi
+// https://en.wikipedia.org/w/api.php?action=query&prop=description|revisions&rvprop=content&rvslots=main&format=json&titles=dehradun -->
