@@ -105,7 +105,6 @@ h1 {
 #searchText:focus {
   background: #444;
   max-height: 50px;
-  max-width: 70vw;
   color: #fff;
 }
 
