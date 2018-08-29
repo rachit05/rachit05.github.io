@@ -10,11 +10,11 @@
 <body>
     <h1>Wanderer.</h1>
     <input type="text" name="username" placeholder="Username">
-
+    <p></p>
     <script>
         let username = document.querySelector('[name=username]');
         username.addEventListener('keyup',function(){
-            console.log(this.value)
+            document.querySelector('p').innerHTML = this.value;
         })
     </script>
 </body>
