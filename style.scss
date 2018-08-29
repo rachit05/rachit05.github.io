@@ -8,8 +8,6 @@ body{
     height: 100vh;
     display: grid;
     grid-template-rows: 50% auto;
-}
-header{
     background: #f56868;
     background: {
         image: url(/images/blue-bubble-calamity-287229.jpg);
@@ -19,6 +17,9 @@ header{
         position-y:50%;
     }
     background-blend-mode: multiply;
+}
+header{
+    
     height: 100%;
     display: grid;
     grid-template-rows: 20% auto;   
@@ -33,7 +34,20 @@ header{
         top:-10px;
     }
 }
-
+#phoneMenuBtn{
+    position: absolute;
+    right: 0;
+    top:7%;
+    background:none;
+    border:1px solid white;
+    color:white;
+    padding:0 10px;
+    font-size: 18px;
+    display: none;
+}
+#closePhoneMenu{
+    display: none;
+}
 nav{
     display: grid;
     grid-template-columns: 30% auto;
@@ -110,7 +124,7 @@ nav{
 #searchBar{
     border:0;
     border-radius: 20px;
-    background: rgba($color: #ddd, $alpha: 0.7);
+    background: rgba($color: #eee, $alpha: 0.8);
     padding:5px 20px;
     text-align: center;
     width:40vw;
@@ -133,6 +147,7 @@ nav{
 
 main{
    position: relative;
+   background: rgba($color: #000, $alpha: 0.3)
 }
 #picCard{
     position: absolute;
@@ -142,7 +157,7 @@ main{
     left:50%;
     transform: translate(-50%,-30%);
     padding:10px;
-    border:1px solid #ddd;
+    // border:1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.459);
     img{
@@ -154,7 +169,7 @@ main{
     width:500px;
     height: 200px;
     position: absolute;
-    border:1px solid #ddd;
+    // border:1px solid #ddd;
     border-radius: 10px;
     background: #fff;
     box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.459);
@@ -210,5 +225,76 @@ main{
         left:50%;
         transform:translate(-50%,-50%);
         z-index: -1;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width: 1024px) {
+    #searchBar{
+        width:80vw;
+    }
+    #headerSearchWrapper{
+        button{
+            padding:3px 15px;
+        }
+    }
+    #phoneMenuBtn{
+        display: block;
+        cursor: pointer;
+    }
+    .navItems{
+        position: absolute;
+        left:0;top:0;
+        height: 100vh;
+        width:100%;
+        z-index: 100;
+        background:white;
+        display: none;
+        opacity: 0;
+        transition: all 0.1s;
+        a{
+            display: grid;
+            color:black;
+            font-size: 3em;
+            font-weight: bolder;
+            align-items: center;
+            justify-content: center;
+        }
+        #closePhoneMenu{
+            position: absolute;
+            right:0;
+            z-index: 1000;
+            display: block;
+        }
+    }
+    .navItems.dg{
+        display:grid;
+    }
+    .navItems.dg.open{
+        opacity: 1;
+    }
+
+    main{
+        display: grid;
+        position: relative;
+        padding:0;
+        width:100vw;
+        *{
+            position: relative !important;
+            transform:translate(0,0) !important;
+        }
+        #picCard{
+            width:150px;
+            height:150px;
+            transform:translate(-50%,-50%) !important;
+        }
+        #leftCard,#rightCard{
+            width:100%;
+            border-radius: 0;
+            margin-bottom: 20px;
+            p,p.lead{
+                font-size: 18px;
+            }
+        }
     }
 }
