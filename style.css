@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+}
+
+*::-moz-selection {
+  background-color: #EEA1BE;
+}
+
+*::selection {
+  background-color: #EEA1BE;
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #420FE7;
+  color: #fff;
+  font-family: 'Montserrat';
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  -webkit-text-decoration: underline wavy;
+          text-decoration: underline wavy;
+  color: #EEA1BE;
+}
+
+nav {
+  height: 150px;
+  padding: 0 40px;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+nav #navRight {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+}
+
+nav #navRight #nrRight {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+main {
+  padding: 2rem 10rem;
+  position: relative;
+}
+
+#mainTopLines {
+  position: relative;
+}
+
+#mainTopLines .line {
+  display: inline-block;
+  margin-right: 3rem;
+  font-weight: 600;
+  color: #EEA1BE;
+  text-transform: capitalize;
+}
+
+#mainTopLines .line:last-child {
+  margin-right: 0;
+}
+
+#mainLeadLine {
+  position: relative;
+  font-size: 6vw;
+  line-height: 7.5rem;
+  margin-top: 50px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#mainLeadLine span {
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+#mainLeadLine span::before {
+  -webkit-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+  position: absolute;
+  content: 'Fullstack';
+  font-size: 1rem;
+  top: -50%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+#mainLeadLine span:hover {
+  cursor: default;
+  color: #EEA1BE;
+  -webkit-text-decoration: underline wavy;
+          text-decoration: underline wavy;
+}
+
+#mainLeadLine span:hover::before {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
+  visibility: visible;
+}
+
+#mainSubLead {
+  font-family: "Montserrat";
+  letter-spacing: 2   px;
+  color: rgba(255, 255, 255, 0.322);
+  width: 40vw;
+  margin-top: 50px;
+  line-height: calc(1.2*1.5);
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  border: 1px solid rgba(255, 255, 255, 0.322);
+  padding: 20px;
+  z-index: 1;
+}
+
+#mainSubLead:hover {
+  border-color: #EEA1BE;
+  background-color: #EEA1BE;
+  color: #18033C;
+  z-index: 10;
+}
+
+#mainCTA {
+  position: absolute;
+  bottom: -100px;
+  border: 1px solid rgba(255, 255, 255, 0.322);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4fr 8fr;
+      grid-template-columns: 4fr 8fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30vw;
+  height: 8vh;
+}
+
+#mainCTA div {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#mainCTA div:last-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.322);
+}
+/*# sourceMappingURL=style.css.map */
