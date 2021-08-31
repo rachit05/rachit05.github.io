@@ -403,13 +403,85 @@ footer h3 span {
   color: #eb5a5a;
 }
 
+#me {
+  background-color: #e7a50f;
+  position: relative;
+}
+
+#me .sectionTitle {
+  color: #18033C;
+}
+
+#me .sectionTitle::after {
+  background: #18033C;
+}
+
+#me img {
+  position: fixed;
+  top: 30%;
+  left: 80%;
+  visibility: hidden;
+  width: 30%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+  opacity: 0;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: opacity 0.25s,-webkit-transform 0.15s;
+  transition: opacity 0.25s,-webkit-transform 0.15s;
+  transition: opacity 0.25s,transform 0.15s;
+  transition: opacity 0.25s,transform 0.15s,-webkit-transform 0.15s;
+  -webkit-animation: aboutImg infinite 6s linear alternate;
+          animation: aboutImg infinite 6s linear alternate;
+}
+
+@-webkit-keyframes aboutImg {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  25% {
+    border-radius: 59% 41% 62% 38% / 45% 58% 42% 55%;
+  }
+  50% {
+    border-radius: 79% 21% 52% 48% / 45% 68% 32% 55%;
+  }
+  75% {
+    border-radius: 67% 33% 73% 27% / 23% 78% 22% 77%;
+  }
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+@keyframes aboutImg {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  25% {
+    border-radius: 59% 41% 62% 38% / 45% 58% 42% 55%;
+  }
+  50% {
+    border-radius: 79% 21% 52% 48% / 45% 68% 32% 55%;
+  }
+  75% {
+    border-radius: 67% 33% 73% 27% / 23% 78% 22% 77%;
+  }
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
 #aboutMe {
+  position: relative;
+  z-index: 2;
   padding: 50px 0;
   font-size: 5rem;
   font-weight: bolder;
   font-family: "ZCOOL KuaiLe";
   line-height: 6.5rem;
   color: rgba(255, 255, 255, 0.322);
+  mix-blend-mode: screen;
 }
 
 #aboutMe span {

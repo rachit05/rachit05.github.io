@@ -21,3 +21,35 @@ const looper = function () {
 }
 
 looper();
+
+const me = document.getElementById('me');
+const aboutImg = document.querySelector('#me img');
+const aboutMe = document.querySelector('#aboutMe');
+
+const imgWidth = aboutImg.getBoundingClientRect().width;
+const imgHeight = aboutImg.getBoundingClientRect().height;
+me.addEventListener('mouseenter',()=>{
+    aboutImg.style.opacity = 0.7;
+    aboutImg.style.visibility = "visible";
+});
+
+me.addEventListener('mouseout',()=>{
+    aboutImg.style.opacity = 0;
+    setTimeout(()=>{
+        aboutImg.style.visibility = "hidden";
+    },2500)
+});
+
+me.addEventListener('mousemove',e=>{
+    aboutImg.style.opacity = 0.7;
+    aboutImg.style.visibility = "visible";
+    let {x,y} = e;
+    x *= 0.05;
+    y *= 0.25
+
+    let aboutMeX = x * -1.5;
+    let aboutMeY = y * 0.3;
+
+    aboutImg.style.transform = `translate(${x-(imgWidth/2)}px,${y-(imgHeight/2)}px)`;
+    aboutMe.style.transform = `translate(${aboutMeX}px,${aboutMeY}px)`;
+})
