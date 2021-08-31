@@ -149,7 +149,7 @@ main, section {
 
 #mainCTA, .mainCTA {
   position: absolute;
-  bottom: 20%;
+  bottom: 30%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   border: 1px solid #01ffdc;
@@ -235,10 +235,12 @@ section {
   font-size: 1rem;
   font-weight: 600;
   color: #EEA1BE;
-  position: relative;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .sectionTitle::after {
@@ -399,6 +401,19 @@ footer h3 {
 
 footer h3 span {
   color: #eb5a5a;
+}
+
+#aboutMe {
+  padding: 50px 0;
+  font-size: 5rem;
+  font-weight: bolder;
+  font-family: "ZCOOL KuaiLe";
+  line-height: 6.5rem;
+  color: rgba(255, 255, 255, 0.322);
+}
+
+#aboutMe span {
+  color: #fff;
 }
 
 .skewScroll {
