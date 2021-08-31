@@ -7,7 +7,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   outline: none;
-  scroll-behavior: smooth;
 }
 
 *::-moz-selection {
@@ -72,8 +71,6 @@ a {
 
 a:hover {
   color: #01ffdc;
-  font-family: "ZCOOL KuaiLe";
-  letter-spacing: 3px;
 }
 
 nav {
@@ -99,6 +96,10 @@ nav #navRight {
 nav #navRight #nrRight {
   -ms-grid-column-align: end;
       justify-self: end;
+}
+
+nav #navRight #nrRight a {
+  font-size: 3rem;
 }
 
 main, section {
@@ -407,6 +408,8 @@ section {
   all: unset;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 11fr 1fr;
+      grid-template-columns: 11fr 1fr;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
@@ -416,6 +419,11 @@ section {
   cursor: pointer;
   -webkit-transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
   transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#contactOptions a.socialLink i {
+  -ms-grid-column-align: end;
+      justify-self: end;
 }
 
 #contactOptions a.socialLink:hover {
@@ -431,6 +439,9 @@ section {
 
 footer {
   padding: 50px 0;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
 }
 
 footer h3 {
@@ -442,6 +453,11 @@ footer h3 {
 
 footer h3 span {
   color: #eb5a5a;
+}
+
+footer div:last-child {
+  -ms-grid-column-align: end;
+      justify-self: end;
 }
 
 #me {

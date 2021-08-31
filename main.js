@@ -10,7 +10,7 @@ const looper = function () {
 
 
     section.forEach(sec => {
-        sec.style.transform = `skewX(${speed * 0.12}deg) skewY(${speed}deg) translateY(${speed}px)`;
+        sec.style.transform = `skewX(${speed * 0.12}deg) skewY(${speed}deg) translate(${speed}px,${speed}px)`;
     });
         
     
@@ -51,5 +51,5 @@ me.addEventListener('mousemove',e=>{
     let aboutMeY = y * 0.3;
 
     aboutImg.style.transform = `translate(${x-(imgWidth/2)}px,${y-(imgHeight/2)}px)`;
-    aboutMe.style.transform = `translate(${aboutMeX}px,${aboutMeY}px)`;
+    // aboutMe.style.transform = `translate(${aboutMeX}px,${aboutMeY}px)`;
 })

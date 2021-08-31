@@ -24,7 +24,6 @@ $secondary-font : 'ZCOOL KuaiLe';
         color: black;
     }
 
-    scroll-behavior: smooth;
 }
 
 html,body{
@@ -71,10 +70,7 @@ a{
     color: white;
     transition: all 0.25s;
     &:hover{
-        // text-decoration: underline wavy;
         color:$green;
-        font-family: $secondary-font;
-        letter-spacing: 3px;
     }
 }
 
@@ -92,6 +88,10 @@ nav{
 
         #nrRight{
             justify-self: end;
+            a{
+                font-size: 3rem;
+                
+            }
         }
     }
 }
@@ -358,6 +358,7 @@ section{
     a.socialLink{   
         all:unset;
         display: grid;
+        grid-template-columns:11fr 1fr;
         align-items: end;
         height:60px;
         padding : 15px 30px;
@@ -365,6 +366,9 @@ section{
         // color: $off-white;
         cursor: pointer;
         transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+        i{
+            justify-self: end;
+        }
         &:hover{
             color: $white;
             background-color: $darkPurple;
@@ -378,6 +382,8 @@ section{
 
 footer{
     padding:50px 0;
+    display: grid;
+    grid-auto-flow: column;
     h3{
         font-size: 1rem;
         font-family: $secondary-font;
@@ -385,6 +391,11 @@ footer{
         margin-bottom: 10px;
         span{
             color: rgb(235, 90, 90);
+        }
+    }
+    div{
+        &:last-child{
+            justify-self: end;
         }
     }
 }
