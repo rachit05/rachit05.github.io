@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
 
 $blue : #420FE7;
 $pink : #EEA1BE;
@@ -7,8 +9,10 @@ $darkPurple : #18033C;
 $white : #fff;
 $off-white : rgba(255, 255, 255, 0.322);
 $yellow : #e7a50f;
-$primary-font : 'Adapta Display';
-$secondary-font : 'Montserrat';
+$primary-font : 'Montserrat';
+$secondary-font : 'ZCOOL KuaiLe';
+
+
 
 *{
     margin: 0;
@@ -19,25 +23,50 @@ $secondary-font : 'Montserrat';
         background-color: $green;
         color: black;
     }
+
+    scroll-behavior: smooth;
 }
 
 html,body{
     height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
+    max-width: 100vw;
+    // overflow-x: hidden;
 }
 body{
     background-color: $blue;
     color: $white;
-    font-family: 'Montserrat';
+    font-family: $primary-font;
+
+    &::after,&::before{
+        position: absolute;
+        content: '';
+        top:0;
+        left:50%;
+        height: 100%;
+        width: 1px;
+        background-color: #0000004d;
+        z-index: -1;
+        transform: rotateZ(-45deg) translate(-50%,0%);
+    }
+    &::before{
+        transform: rotateZ(45deg) translate(-50%,0%);
+    }
+}
+
+.wrapper{
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 a{
     text-decoration: none;
     color: white;
+    transition: all 0.25s;
     &:hover{
-        text-decoration: underline wavy;
+        // text-decoration: underline wavy;
         color:$green;
+        font-family: $secondary-font;
+        letter-spacing: 3px;
     }
 }
 
@@ -59,9 +88,11 @@ nav{
     }
 }
 
-main{
+main,section{
     padding:2rem 10rem;
     position: relative;
+    min-height: 100vh;
+    height: auto;
 }
 #mainTopLines{
     position: relative;
@@ -78,65 +109,40 @@ main{
 }
 #mainLeadLine{
     position: relative;
-    font-size: 6vw;
-    line-height:7.5rem;
-    margin-top: 50px;
+    font-size: 4.5vw;
+    line-height:7rem;
+    margin-top: 20px;
+    text-transform: capitalize;
     span{
         position: relative;
         display: inline-block;
         transition: all ease 0.5s;
-        &::before{
-            transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
-            position: absolute;
-            content:'Fullstack';
-            font-size: 1rem;
-            top:-50%;
-            left:0;
-            right: 0;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-        }
+        font-family: $secondary-font;
+        color: $green;        
     }
-    span:hover{
-        cursor: default;
-        color: $green;
-        text-decoration: underline wavy;
-        &::before{
-            transform: translateY(0px);
-            opacity: 1;
-            visibility: visible;
-        }
-    }
-   
+    
 }
 #mainSubLead{
     font-family: $secondary-font;
-    letter-spacing: 2   px;
-    color: $off-white;
-    width: 40vw;
-    margin-top: 50px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
     line-height: calc(1.2*1.5);
+    text-align: right;
+    color: $green;
 
-    position: absolute;
-    right: 10%;
-    bottom: -120px;
-
-    // border: 1px solid $off-white;
-    padding: 20px;
-
+    width: 30vw;
+    margin-top: 100px;
+    float: right;
+    transform: translateY(-50%);
     z-index: 1;
-
-    &:hover{
-        color: $green;
-    }
 }
 
 
-#mainCTA{
+#mainCTA,.mainCTA{
     position: absolute;
-    bottom:-100px;
-    border: 1px solid $off-white;
+    bottom:20%;
+    transform: translateY(-50%);
+    border: 1px solid $green;
     display: grid;
     grid-template-columns: 4fr 8fr;
     align-items: center;
@@ -144,6 +150,7 @@ main{
     height: 8vh;
     cursor: pointer;
     overflow: hidden;
+    font-weight: 700;
     div{
         height: 100%;
         display: grid;
@@ -176,7 +183,7 @@ main{
             }
         }
         &:last-child{
-            border-left: 1px solid $off-white;
+            border-left: 1px solid $green;
         }
     }
 
@@ -195,4 +202,167 @@ main{
             }
         }
     }
+}
+
+section{
+    padding-top:5rem;
+    background: $darkPurple;
+    
+}
+
+.sectionTitle{
+    font-size: 1rem;
+    font-weight: 600;
+    color: $pink;
+    position: relative;
+    width: fit-content;
+    &::after{
+        position: absolute;
+        content: '';
+        right:-40px;
+        top:50%;
+        transform: translateY(-50%);
+
+        width: 20px;
+        height: 1px;
+        background:$pink;
+    }
+}
+
+.sectionLeadLine{
+    font-size: 2rem;
+    font-weight: 800;
+    padding: 20px 0;
+    text-transform: capitalize;
+    
+}
+.sectionSubLeadLine{
+    font-family: $secondary-font;
+    letter-spacing: 2px;
+    color: $green;
+    line-height: 1.5rem;
+    padding:20px 0;
+    width:50%;
+}
+
+#workDisplay,#contactOptions{
+    padding : 50px 0 30px 0;
+}
+
+.workCard{
+    width: 300px;
+    height: 300px;
+    display: inline-grid;
+    grid-template-rows: 2fr 8fr 2fr;
+    padding:30px;
+    margin: 0 30px 30px 0;   
+    transition: all 0.25s; 
+    
+    &:nth-child(1){
+        background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+    }
+
+    &:nth-child(2){
+        background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    }
+    
+    &:nth-child(3){
+        background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    }
+    
+    &:nth-child(4){
+        background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    }
+}
+
+.cardName{
+    color: black;
+    align-self: end;
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.cardList{
+    list-style-type: none;
+    color: black;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+.cardListItem{
+    display: inline-block;
+    margin:0 20px 0 0;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+#contact{
+    background-color: $blue;
+    min-height: unset;
+
+}
+#contactOptions{
+    font-weight: 600;
+    .mainCTA{
+        position: relative;
+        bottom:0;
+        transform: translateY(0%);
+        display: inline-grid;
+        margin:0 50px 10px 0;
+        border-color: $green;
+        div{
+            &:last-child{
+                border-left: 1px solid $green;
+            }
+        }
+    }
+
+    #socialLinks{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        margin-top: 50px;
+    }
+    a.socialLink{   
+        all:unset;
+        display: grid;
+        align-items: end;
+        height:60px;
+        padding : 15px 30px;
+        border: 1px solid $green;
+        // color: $off-white;
+        cursor: pointer;
+        transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+        &:hover{
+            color: $white;
+            background-color: $darkPurple;
+            border-color: transparent;
+            align-items: center;
+            box-shadow: -10px 10px 0 $green;
+        }
+    }
+}
+
+
+footer{
+    padding:50px 0;
+    h3{
+        font-size: 1rem;
+        font-family: $secondary-font;
+        letter-spacing: 1.5px;
+        margin-bottom: 10px;
+        span{
+            color: rgb(235, 90, 90);
+        }
+    }
+}
+
+
+
+
+
+
+.skewScroll{
+    transition: transform 1.5s cubic-bezier(0.23, 1, 0.320, 1);
+    transform-origin: top left;
+    will-change: transform;
 }

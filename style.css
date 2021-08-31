@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap");
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   outline: none;
+  scroll-behavior: smooth;
 }
 
 *::-moz-selection {
@@ -19,25 +22,49 @@
 
 html, body {
   height: 100vh;
-  width: 100vw;
-  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
   background-color: #420FE7;
   color: #fff;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
+}
+
+body::after, body::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 1px;
+  background-color: #0000004d;
+  z-index: -1;
+  -webkit-transform: rotateZ(-45deg) translate(-50%, 0%);
+          transform: rotateZ(-45deg) translate(-50%, 0%);
+}
+
+body::before {
+  -webkit-transform: rotateZ(45deg) translate(-50%, 0%);
+          transform: rotateZ(45deg) translate(-50%, 0%);
+}
+
+.wrapper {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 a {
   text-decoration: none;
   color: white;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
 }
 
 a:hover {
-  -webkit-text-decoration: underline wavy;
-          text-decoration: underline wavy;
   color: #01ffdc;
+  font-family: "ZCOOL KuaiLe";
+  letter-spacing: 3px;
 }
 
 nav {
@@ -65,9 +92,11 @@ nav #navRight #nrRight {
       justify-self: end;
 }
 
-main {
+main, section {
   padding: 2rem 10rem;
   position: relative;
+  min-height: 100vh;
+  height: auto;
 }
 
 #mainTopLines {
@@ -88,9 +117,10 @@ main {
 
 #mainLeadLine {
   position: relative;
-  font-size: 6vw;
-  line-height: 7.5rem;
-  margin-top: 50px;
+  font-size: 4.5vw;
+  line-height: 7rem;
+  margin-top: 20px;
+  text-transform: capitalize;
 }
 
 #mainLeadLine span {
@@ -98,59 +128,31 @@ main {
   display: inline-block;
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
-}
-
-#mainLeadLine span::before {
-  -webkit-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
-  transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
-  position: absolute;
-  content: 'Fullstack';
-  font-size: 1rem;
-  top: -50%;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
-}
-
-#mainLeadLine span:hover {
-  cursor: default;
+  font-family: "ZCOOL KuaiLe";
   color: #01ffdc;
-  -webkit-text-decoration: underline wavy;
-          text-decoration: underline wavy;
-}
-
-#mainLeadLine span:hover::before {
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
-  opacity: 1;
-  visibility: visible;
 }
 
 #mainSubLead {
-  font-family: "Montserrat";
-  letter-spacing: 2   px;
-  color: rgba(255, 255, 255, 0.322);
-  width: 40vw;
-  margin-top: 50px;
+  font-family: "ZCOOL KuaiLe";
+  text-transform: capitalize;
+  letter-spacing: 2px;
   line-height: calc(1.2*1.5);
-  position: absolute;
-  right: 10%;
-  bottom: -120px;
-  padding: 20px;
+  text-align: right;
+  color: #01ffdc;
+  width: 30vw;
+  margin-top: 100px;
+  float: right;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   z-index: 1;
 }
 
-#mainSubLead:hover {
-  color: #01ffdc;
-}
-
-#mainCTA {
+#mainCTA, .mainCTA {
   position: absolute;
-  bottom: -100px;
-  border: 1px solid rgba(255, 255, 255, 0.322);
+  bottom: 20%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border: 1px solid #01ffdc;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 4fr 8fr;
@@ -162,9 +164,10 @@ main {
   height: 8vh;
   cursor: pointer;
   overflow: hidden;
+  font-weight: 700;
 }
 
-#mainCTA div {
+#mainCTA div, .mainCTA div {
   height: 100%;
   display: -ms-grid;
   display: grid;
@@ -178,11 +181,11 @@ main {
   transition: all 0.25s ease;
 }
 
-#mainCTA div:first-child {
+#mainCTA div:first-child, .mainCTA div:first-child {
   position: relative;
 }
 
-#mainCTA div:first-child::before {
+#mainCTA div:first-child::before, .mainCTA div:first-child::before {
   position: absolute;
   content: 'Copy';
   width: 100%;
@@ -201,25 +204,210 @@ main {
   transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-#mainCTA div:first-child:hover::before {
+#mainCTA div:first-child:hover::before, .mainCTA div:first-child:hover::before {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   opacity: 1;
   visibility: visible;
 }
 
-#mainCTA div:last-child {
-  border-left: 1px solid rgba(255, 255, 255, 0.322);
+#mainCTA div:last-child, .mainCTA div:last-child {
+  border-left: 1px solid #01ffdc;
 }
 
-#mainCTA:hover div:first-child::before {
+#mainCTA:hover div:first-child::before, .mainCTA:hover div:first-child::before {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   opacity: 1;
   visibility: visible;
 }
 
-#mainCTA:hover div:last-child {
+#mainCTA:hover div:last-child, .mainCTA:hover div:last-child {
   font-size: 0.9rem;
+}
+
+section {
+  padding-top: 5rem;
+  background: #18033C;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #EEA1BE;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.sectionTitle::after {
+  position: absolute;
+  content: '';
+  right: -40px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 20px;
+  height: 1px;
+  background: #EEA1BE;
+}
+
+.sectionLeadLine {
+  font-size: 2rem;
+  font-weight: 800;
+  padding: 20px 0;
+  text-transform: capitalize;
+}
+
+.sectionSubLeadLine {
+  font-family: "ZCOOL KuaiLe";
+  letter-spacing: 2px;
+  color: #01ffdc;
+  line-height: 1.5rem;
+  padding: 20px 0;
+  width: 50%;
+}
+
+#workDisplay, #contactOptions {
+  padding: 50px 0 30px 0;
+}
+
+.workCard {
+  width: 300px;
+  height: 300px;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-rows: 2fr 8fr 2fr;
+      grid-template-rows: 2fr 8fr 2fr;
+  padding: 30px;
+  margin: 0 30px 30px 0;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.workCard:nth-child(1) {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#fddb92), to(#d1fdff));
+  background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+}
+
+.workCard:nth-child(2) {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#a8edea), to(#fed6e3));
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+.workCard:nth-child(3) {
+  background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+
+.workCard:nth-child(4) {
+  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+}
+
+.cardName {
+  color: black;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.cardList {
+  list-style-type: none;
+  color: black;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+.cardListItem {
+  display: inline-block;
+  margin: 0 20px 0 0;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+#contact {
+  background-color: #420FE7;
+  min-height: unset;
+}
+
+#contactOptions {
+  font-weight: 600;
+}
+
+#contactOptions .mainCTA {
+  position: relative;
+  bottom: 0;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  display: -ms-inline-grid;
+  display: inline-grid;
+  margin: 0 50px 10px 0;
+  border-color: #01ffdc;
+}
+
+#contactOptions .mainCTA div:last-child {
+  border-left: 1px solid #01ffdc;
+}
+
+#contactOptions #socialLinks {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+#contactOptions a.socialLink {
+  all: unset;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  height: 60px;
+  padding: 15px 30px;
+  border: 1px solid #01ffdc;
+  cursor: pointer;
+  -webkit-transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#contactOptions a.socialLink:hover {
+  color: #fff;
+  background-color: #18033C;
+  border-color: transparent;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: -10px 10px 0 #01ffdc;
+          box-shadow: -10px 10px 0 #01ffdc;
+}
+
+footer {
+  padding: 50px 0;
+}
+
+footer h3 {
+  font-size: 1rem;
+  font-family: "ZCOOL KuaiLe";
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+footer h3 span {
+  color: #eb5a5a;
+}
+
+.skewScroll {
+  -webkit-transition: -webkit-transform 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: -webkit-transform 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 1.5s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  will-change: transform;
 }
 /*# sourceMappingURL=style.css.map */

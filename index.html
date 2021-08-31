@@ -6,40 +6,122 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rachit Shrivastava</title>
     <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+
 </head>
 <body> 
-    <nav id="topNavigation">
-        <div id="navLeft">
-            <div id="mainTopLines">
-                <p class="line">I'm Rachit Shrivastava</p>
-                <p class="line">Available for freelance work</p>
+    <div class="wrapper">
+        <nav id="topNavigation">
+            <div id="navLeft">
+                <div id="mainTopLines">
+                    <!-- <p class="line">Hi👋 I'm Rachit Shrivastava</p> -->
+                    <p class="line">Available for freelance work</p>
+                </div>
             </div>
-        </div>
-        <div id="navRight">
-            <div id="nrLeft"></div>
-            <div id="nrRight">
-                <a href="#" id="navLink">About & Services</a>
+            <div id="navRight">
+                <div id="nrLeft"></div>
+                <div id="nrRight">
+                    <a href="#work" id="navLink">Work</a>
+                </div>
             </div>
-        </div>
-    </nav>
-
-    <main>
-        <h1 id="mainLeadLine">
-            I'm Freelance <span>Developer</span><br/>
-            Turning Your Paperball Into Paperplane
-        </h1>
-        <div id="mainCTA">
-            <div id="mainCTAIcon">Mail</div>
-            <div id="mainCTAText">
-                hello@funcococode.com
+        </nav>
+    
+        <main>
+            <h1 id="mainLeadLine" class="skewScroll">
+                Hello ✌ I'm <span>Rachit Shrivastava</span>,<br>
+                a <span>Fullstack</span> Developer<br/>
+                Turning Your <span>Seeds</span> Into <span>Fruits</span>.
+            </h1>
+            <div id="mainCTA" class="skewScroll">
+                <div id="mainCTAIcon">Mail</div>
+                <div id="mainCTAText">
+                    hello@funcococode.com
+                </div>
             </div>
-        </div>
-        <p id="mainSubLead">
-            I help companies to design digital products and turn ideas into a functional and delightful experience. I’m focusing on working on interface and digital design – mainly building products, branding and websites.
-        </p>
-    </main>
+            <p id="mainSubLead" class="skewScroll">
+                I’m focusing on working on rich UI/UX mainly developing dynamic and interactive websites and webapps.
+            </p>
+        </main>
+    
+    
+        <section id="work">
+            <p class="sectionTitle">Projects </p>
+            <p class="sectionLeadLine">Things i've worked on</p>
+    
+            <div id="workDisplay">
+                <div class="workCard skewScroll">
+                    <header class="cardHeader"></header>
+                    <h2 class="cardName">Weather Cart.</h2>
+                    <ul class="cardList">
+                        <li class="cardListItem">html/scss</li>
+                        <li class="cardListItem">api</li>
+                        <li class="cardListItem">js</li>
+                    </ul>
+                </div>
+                <div class="workCard skewScroll">
+                    <header class="cardHeader"></header>
+                    <h2 class="cardName">Keeper.</h2>
+                    <ul class="cardList">
+                        <li class="cardListItem">html/scss</li>
+                        <li class="cardListItem">js</li>
+                    </ul>
+                </div>
+                <div class="workCard skewScroll">
+                    <header class="cardHeader"></header>
+                    <h2 class="cardName">Studio<br>HS.</h2>
+                    <ul class="cardList">
+                        <li class="cardListItem">html/scss</li>
+                        <li class="cardListItem">js</li>
+                        <li class="cardListItem">gsap</li>
+                    </ul>
+                </div>
+                <div class="workCard skewScroll">
+                    <header class="cardHeader"></header>
+                    <h2 class="cardName">Taare<br>Music.</h2>
+                    <ul class="cardList">
+                        <li class="cardListItem">html/scss</li>
+                        <li class="cardListItem">js</li>
+                        <li class="cardListItem">gsap</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    
+        <section id="contact">
+            <div class="sectionTitle">Look who's here</div>
+            <div class="sectionLeadLine">Let's get in touch</div>
+            <p class="sectionSubLeadLine">
+                I’m not really active on <b>Linkedin</b> but you can stay in touch with me on <b>Instagram</b>. I post some of my experiments on <b>Codepen</b>.
+            </p>
+            <div id="contactOptions">
+                <div class="mainCTA">
+                    <div id="mainCTAIcon">Mail</div>
+                    <div id="mainCTAText">
+                        hello@funcococode.com
+                    </div>
+                </div>
+                <div class="mainCTA">
+                    <div id="mainCTAIcon">Phone</div>
+                    <div id="mainCTAText">
+                        +(91)7000584572
+                    </div>
+                </div>
+    
+                <div id="socialLinks">
+                    <a href="#" class="socialLink">Github</a>
+                    <a href="#" class="socialLink">Codepen</a>
+                    <a href="#" class="socialLink">Instagram</a>
+                    <a href="#" class="socialLink">Linkedin</a>
+                    <a href="#" class="socialLink">Facebook</a>
+                </div>
+            </div>
+    
+            <footer>
+                <h3>Created with <span> ♥ </span>by Rachit Shrivastava</h3>
+                <h3><a href="#topNavigation">Back to top</a></h3>
+            </footer>
+        </section>
+    </div>
 
-
-    <script src="main.js"></script>
 </body>
 </html>
