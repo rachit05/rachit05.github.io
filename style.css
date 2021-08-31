@@ -8,10 +8,12 @@
 
 *::-moz-selection {
   background-color: #01ffdc;
+  color: black;
 }
 
 *::selection {
   background-color: #01ffdc;
+  color: black;
 }
 
 html, body {
