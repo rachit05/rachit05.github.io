@@ -53,3 +53,13 @@ me.addEventListener('mousemove',e=>{
     aboutImg.style.transform = `translate(${x-(imgWidth/2)}px,${y-(imgHeight/2)}px)`;
     // aboutMe.style.transform = `translate(${aboutMeX}px,${aboutMeY}px)`;
 })
+
+
+let initOffset = pageYOffset
+addEventListener('scroll',e=>{
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (winScroll / height) * 100;
+
+    document.getElementById('currentProgress').style.height = `${scrolled * 5}px`;
+})
