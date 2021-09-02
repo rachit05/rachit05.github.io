@@ -1,4 +1,14 @@
 
+
+let menuBtn = document.querySelector('#navLink');
+let menuCloseBtn = document.querySelector('#menuCloseBtn');
+let aboutMeBtn = document.querySelector('#scrollTo__aboutMe');
+let contactBtn = document.querySelector('#scrollTo__contact');
+let workBtn = document.querySelector('#scrollTo__work');
+let backToTopBtn = document.querySelector('#scroll__backToTop');
+
+
+
 gsap.from("main",{
     duration :3,
     opacity : 0,
@@ -10,13 +20,6 @@ gsap.from("main",{
 })
 
 
-
-let menuBtn = document.querySelector('#navLink');
-let menuCloseBtn = document.querySelector('#menuCloseBtn');
-let aboutMeBtn = document.querySelector('#scrollTo__aboutMe');
-let contactBtn = document.querySelector('#scrollTo__contact');
-let workBtn = document.querySelector('#scrollTo__work');
-let backToTopBtn = document.querySelector('#scroll__backToTop');
 
 let menuTimeline = gsap.timeline({});
 
@@ -121,4 +124,36 @@ contactBtn.addEventListener('click',function(e){
 backToTopBtn.addEventListener('click',function(e){
     e.preventDefault();
     gsap.to(window,{duration:3,scrollTo:'#topNavigation',ease:'expo.inOut'});
+})
+
+
+let tl = gsap.timeline({
+    scrollTrigger:{
+        trigger:'#workDisplay',
+        start : "top 70%",
+        end:'+=200',
+        toggleActions:'play none none reverse'
+    }
+});
+let tl2 = gsap.timeline({
+    scrollTrigger:{
+        trigger:'#me',
+        start : "top 70%",
+        end:'+=200',
+        toggleActions:'play none none reverse'
+    }
+});
+
+tl.from('.workCard',{
+    duration:1,
+    opacity:0,
+    ease:"power4.inOut",
+    stagger:0.15,
+})
+tl2.from('#aboutMe',{
+    duration:2,
+    delay:0.5,
+    opacity:0,
+    ease:"power4.inOut",
+    stagger:0.15,
 })
