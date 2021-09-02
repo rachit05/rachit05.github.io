@@ -78,37 +78,70 @@ body{
 #menu,#menu-f1,#menu-f2{
     height: 100vh;
     width:100vw;
-    background-color: $green;
+    background-color: $white;
     position: fixed;
     top:0;
     left:0;
-    z-index: 500;
-    // transform: translateX(-100%);
+    transform: translateX(-100%);
     transform-origin: left;
+    pointer-events: none;
+    
 }
 #menu-f2{
-    background: $pink;
+    background: $yellow;
 }
 #menu{
     background: $darkPurple;
     transform-origin: center bottom;
     display: grid;
+    padding:50px 0;
+    z-index: 500;
+    pointer-events: all;
     .menuLink{
+        position: relative;
         display: grid;
         height: 100%;
         width:100%;
         align-items: center;
         padding: 0 100px;
-        font-size: 7rem;
+        font-size: 5rem;
         font-family: $secondary-font;
         cursor: pointer;
+        visibility: hidden;
+        span{
+            position: absolute;
+            display: inline-block;
+            white-space: nowrap;
+            width:100%;
+            font-family: $primary-font;
+            font-weight: bolder;
+            opacity: 0;
+            user-select: none;
+        }
         &:hover{
             background-color: white;
             color: $darkPurple;
             letter-spacing: 15px;
+            span{
+                opacity: 0.1;
+                animation: menuLinkAnim infinite 40s linear;
+            }
+        }
+        
+        &:last-child{
+            color: $pink;
         }
     }
+    
 }
+
+
+@keyframes menuLinkAnim {
+    to{
+        transform: translateX(-100%);
+    }
+}
+
 
 #cursor{
     position: absolute;
@@ -121,6 +154,7 @@ body{
     transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
     z-index: 1000;
     pointer-events: none;
+    user-select: none;
 }
 
 
@@ -154,6 +188,13 @@ nav{
             justify-self: end;
             a{
                 font-size: 3rem;
+                transition: all 0.25s ease;
+                display: inline-block;
+                transform: scale(1);
+                &.menuOpen{
+                    transform: scale(0);
+                    // opacity: 0;
+                }
             }
         }
     }

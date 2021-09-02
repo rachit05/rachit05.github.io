@@ -72,17 +72,19 @@ body {
 #menu, #menu-f1, #menu-f2 {
   height: 100vh;
   width: 100vw;
-  background-color: #01ffdc;
+  background-color: #fff;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 500;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
   -webkit-transform-origin: left;
           transform-origin: left;
+  pointer-events: none;
 }
 
 #menu-f2 {
-  background: #EEA1BE;
+  background: #e7a50f;
 }
 
 #menu {
@@ -91,9 +93,13 @@ body {
           transform-origin: center bottom;
   display: -ms-grid;
   display: grid;
+  padding: 50px 0;
+  z-index: 500;
+  pointer-events: all;
 }
 
 #menu .menuLink {
+  position: relative;
   display: -ms-grid;
   display: grid;
   height: 100%;
@@ -102,15 +108,54 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 100px;
-  font-size: 7rem;
+  font-size: 5rem;
   font-family: "ZCOOL KuaiLe";
   cursor: pointer;
+  visibility: hidden;
+}
+
+#menu .menuLink span {
+  position: absolute;
+  display: inline-block;
+  white-space: nowrap;
+  width: 100%;
+  font-family: "Montserrat";
+  font-weight: bolder;
+  opacity: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 #menu .menuLink:hover {
   background-color: white;
   color: #18033C;
   letter-spacing: 15px;
+}
+
+#menu .menuLink:hover span {
+  opacity: 0.1;
+  -webkit-animation: menuLinkAnim infinite 40s linear;
+          animation: menuLinkAnim infinite 40s linear;
+}
+
+#menu .menuLink:last-child {
+  color: #EEA1BE;
+}
+
+@-webkit-keyframes menuLinkAnim {
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes menuLinkAnim {
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
 }
 
 #cursor {
@@ -126,6 +171,10 @@ body {
   transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
   z-index: 1000;
   pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .wrapper {
@@ -171,6 +220,16 @@ nav #navRight #nrRight {
 
 nav #navRight #nrRight a {
   font-size: 3rem;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  display: inline-block;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+nav #navRight #nrRight a.menuOpen {
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 main, section {
