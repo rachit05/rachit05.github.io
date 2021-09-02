@@ -30,24 +30,6 @@ body {
   font-family: "Montserrat";
 }
 
-body::after, body::before {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 50%;
-  height: 100%;
-  width: 1px;
-  background-color: #0000004d;
-  z-index: -1;
-  -webkit-transform: rotateZ(-45deg) translate(-50%, 0%);
-          transform: rotateZ(-45deg) translate(-50%, 0%);
-}
-
-body::before {
-  -webkit-transform: rotateZ(45deg) translate(-50%, 0%);
-          transform: rotateZ(45deg) translate(-50%, 0%);
-}
-
 ::-webkit-scrollbar {
   width: 5px;
   background: white;
@@ -85,6 +67,65 @@ body::before {
   to {
     background-color: #01ffdc;
   }
+}
+
+#menu, #menu-f1, #menu-f2 {
+  height: 100vh;
+  width: 100vw;
+  background-color: #01ffdc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+#menu-f2 {
+  background: #EEA1BE;
+}
+
+#menu {
+  background: #18033C;
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+  display: -ms-grid;
+  display: grid;
+}
+
+#menu .menuLink {
+  display: -ms-grid;
+  display: grid;
+  height: 100%;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 100px;
+  font-size: 7rem;
+  font-family: "ZCOOL KuaiLe";
+  cursor: pointer;
+}
+
+#menu .menuLink:hover {
+  background-color: white;
+  color: #18033C;
+  letter-spacing: 15px;
+}
+
+#cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #a695df5e;
+  mix-blend-mode: difference;
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 1000;
+  pointer-events: none;
 }
 
 .wrapper {
@@ -137,6 +178,8 @@ main, section {
   position: relative;
   min-height: 100vh;
   height: auto;
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 #scrollIndicator {

@@ -10,23 +10,37 @@
     <link rel="stylesheet" href="style.css">
 
     <script src="butter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollToPlugin.min.js"></script>
     <script src="main.js" defer></script>
+    <script src="gsap.js" defer></script>
 
 </head>
 <body> 
+    <div id="menu-f1"></div>
+    <div id="menu-f2"></div>
+    <div id="menu">
+        <a class="menuLink">Me</a>
+        <a class="menuLink">Work</a>
+        <a class="menuLink">Get in touch</a>
+        <a class="menuLink">Resume</a>
+    </div>
     <div id="currentProgress"></div>
+    <div id="cursor"></div>
+
+
     <div class="wrapper" id="butter">
         <nav id="topNavigation">
             <div id="navLeft">
                 <div id="mainTopLines">
                     <!-- <p class="line">Hi👋✌ I'm Rachit Shrivastava</p> -->
-                    <p class="line">🤝</p>
+                    <!-- <p class="line">🤝</p> -->
                 </div>
             </div>
             <div id="navRight">
                 <div id="nrLeft"></div>
                 <div id="nrRight">
-                    <a href="#work" id="navLink"><i class="fas fa-ellipsis-h"></i></a>
+                    <a id="navLink"><i class="fas fa-ellipsis-h"></i></a>
                 </div>
             </div>
         </nav>

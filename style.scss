@@ -35,21 +35,10 @@ body{
     color: $white;
     font-family: $primary-font;
 
-    &::after,&::before{
-        position: absolute;
-        content: '';
-        top:0;
-        left:50%;
-        height: 100%;
-        width: 1px;
-        background-color: #0000004d;
-        z-index: -1;
-        transform: rotateZ(-45deg) translate(-50%,0%);
-    }
-    &::before{
-        transform: rotateZ(45deg) translate(-50%,0%);
-    }
+    
 }
+
+
 
 ::-webkit-scrollbar{
     width:5px;
@@ -86,6 +75,53 @@ body{
     }
 }
 
+#menu,#menu-f1,#menu-f2{
+    height: 100vh;
+    width:100vw;
+    background-color: $green;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 500;
+    // transform: translateX(-100%);
+    transform-origin: left;
+}
+#menu-f2{
+    background: $pink;
+}
+#menu{
+    background: $darkPurple;
+    transform-origin: center bottom;
+    display: grid;
+    .menuLink{
+        display: grid;
+        height: 100%;
+        width:100%;
+        align-items: center;
+        padding: 0 100px;
+        font-size: 7rem;
+        font-family: $secondary-font;
+        cursor: pointer;
+        &:hover{
+            background-color: white;
+            color: $darkPurple;
+            letter-spacing: 15px;
+        }
+    }
+}
+
+#cursor{
+    position: absolute;
+    width:20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #a695df5e;
+    mix-blend-mode: difference;
+
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 1000;
+    pointer-events: none;
+}
 
 
 .wrapper{
@@ -128,6 +164,7 @@ main,section{
     position: relative;
     min-height: 100vh;
     height:auto;
+    transform-origin: left;
 }
 #scrollIndicator{
     position: absolute;

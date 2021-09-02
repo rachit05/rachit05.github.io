@@ -46,11 +46,11 @@ me.addEventListener('mousemove',e=>{
     let {x,y} = e;
     x *= 0.05;
     y *= 0.25
-
-    let aboutMeX = x * -1.5;
-    let aboutMeY = y * 0.3;
-
     aboutImg.style.transform = `translate(${x-(imgWidth/2)}px,${y-(imgHeight/2)}px)`;
+
+    
+    // let aboutMeX = x * -1.5;
+    // let aboutMeY = y * 0.3;
     // aboutMe.style.transform = `translate(${aboutMeX}px,${aboutMeY}px)`;
 })
 
@@ -62,4 +62,16 @@ addEventListener('scroll',e=>{
     let scrolled = (winScroll / height) * 100;
 
     document.getElementById('currentProgress').style.height = `${scrolled * 5}px`;
+})
+
+
+
+const cursor = document.querySelector('#cursor');
+addEventListener('mousemove',function(e){
+    let x = e.pageX;
+    let y = e.pageY;
+    x -= (cursor.getBoundingClientRect().width / 2);
+    y -= (cursor.getBoundingClientRect().height / 2);
+
+    cursor.style.transform = `translate(${x}px,${y}px)`;
 })
