@@ -34,8 +34,6 @@ body{
     background-color: $blue;
     color: $white;
     font-family: $primary-font;
-
-    
 }
 
 
@@ -161,6 +159,7 @@ body{
 .wrapper{
     max-width: 100vw;
     overflow-x: hidden;
+
 }
 
 a{
@@ -200,7 +199,9 @@ nav{
     }
 }
 
+
 main,section{
+    
     padding:2rem 10rem;
     position: relative;
     min-height: 100vh;
@@ -512,6 +513,7 @@ footer{
 #me{
     background-color: $yellow;
     position: relative;
+
     .sectionTitle{
         color: $darkPurple;
         &::after{
@@ -522,7 +524,7 @@ footer{
 
     img{
         position: fixed;
-        top:40%;
+        top:50%;
         left:80%;
 
         visibility: hidden;
@@ -535,6 +537,42 @@ footer{
         transition: opacity 0.25s,transform 0.15s;
 
         animation: aboutImg infinite 6s linear alternate;
+    }
+
+    #aboutMeRightArrow{
+        font-size: 1rem;
+        font-family: $secondary-font;
+        color: $off-white;
+        animation: amraAnim infinite 4s;
+        position: relative;
+        // text-transform: uppercase;
+        cursor: default;
+        &:hover{
+            color:$white;
+            &::after{
+                position:absolute;
+                content:'Use the mouse wheel';
+                left: 120%;
+                width:150px;
+                height: 100%;
+                top:50%;
+                transform: translateY(-50%);
+
+            }
+        }
+    }
+
+}
+
+@keyframes amraAnim{
+    0%{
+        transform: translateX(0%);
+    }
+    50%{
+        transform: translateX(-2%);
+    }
+    100%{
+        transform: translateX(0%);
     }
 }
 
@@ -557,20 +595,52 @@ footer{
 }
 
 #aboutMe{
-    position:relative;
-    z-index: 2;
-    padding: 50px 0;
-    font-size: 5rem;
-    font-weight: bolder;
-    font-family: $secondary-font;
-    line-height: 6.5rem;
-
-    color: $off-white;
-    mix-blend-mode: screen;
+    height: 60vh;
+    width:100%;
+    white-space: nowrap;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    // overflow-x: scroll;
     span{
-        color: $white;
+        scroll-snap-align: center;
+        display: inline-grid;
+        margin-right: 20px;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        font-size: 4rem;
+        font-family: $secondary-font;
+        white-space: pre-line;
+        color: $off-white;
+        mix-blend-mode: screen;
+        &:last-child{
+            color: $white;
+            margin-right: 0px;
+        }
     }
 }
+// #aboutMe{
+//     position:relative;
+//     z-index: 2;
+//     padding: 50px 0;
+//     font-size: 5rem;
+//     font-weight: bolder;
+//     font-family: $secondary-font;
+//     line-height: 6.5rem;
+//     // width: fit-content;
+//     overflow-x:scroll ;
+//     white-space: nowrap;
+//     background: #000;
+    
+//     span{
+//         display: block;
+//         white-space:normal;
+//         &:last-child{
+//             color: $white;
+//         }
+//     }
+// }
 
 
 

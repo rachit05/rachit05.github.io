@@ -615,7 +615,7 @@ footer div:last-child {
 
 #me img {
   position: fixed;
-  top: 40%;
+  top: 50%;
   left: 80%;
   visibility: hidden;
   width: 30%;
@@ -631,6 +631,61 @@ footer div:last-child {
   transition: opacity 0.25s,transform 0.15s,-webkit-transform 0.15s;
   -webkit-animation: aboutImg infinite 6s linear alternate;
           animation: aboutImg infinite 6s linear alternate;
+}
+
+#me #aboutMeRightArrow {
+  font-size: 1rem;
+  font-family: "ZCOOL KuaiLe";
+  color: rgba(255, 255, 255, 0.322);
+  -webkit-animation: amraAnim infinite 4s;
+          animation: amraAnim infinite 4s;
+  position: relative;
+  cursor: default;
+}
+
+#me #aboutMeRightArrow:hover {
+  color: #fff;
+}
+
+#me #aboutMeRightArrow:hover::after {
+  position: absolute;
+  content: 'Use the mouse wheel';
+  left: 120%;
+  width: 150px;
+  height: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@-webkit-keyframes amraAnim {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  50% {
+    -webkit-transform: translateX(-2%);
+            transform: translateX(-2%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes amraAnim {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  50% {
+    -webkit-transform: translateX(-2%);
+            transform: translateX(-2%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
 }
 
 @-webkit-keyframes aboutImg {
@@ -670,19 +725,35 @@ footer div:last-child {
 }
 
 #aboutMe {
-  position: relative;
-  z-index: 2;
-  padding: 50px 0;
-  font-size: 5rem;
-  font-weight: bolder;
+  height: 60vh;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+#aboutMe span {
+  scroll-snap-align: center;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  margin-right: 20px;
+  height: 100%;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 4rem;
   font-family: "ZCOOL KuaiLe";
-  line-height: 6.5rem;
+  white-space: pre-line;
   color: rgba(255, 255, 255, 0.322);
   mix-blend-mode: screen;
 }
 
-#aboutMe span {
+#aboutMe span:last-child {
   color: #fff;
+  margin-right: 0px;
 }
 
 .skewScroll {

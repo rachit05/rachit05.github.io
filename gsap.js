@@ -150,10 +150,10 @@ tl.from('.workCard',{
     ease:"power4.inOut",
     stagger:0.15,
 })
-tl2.from('#aboutMe',{
-    duration:2,
-    delay:0.5,
-    opacity:0,
-    ease:"power4.inOut",
-    stagger:0.15,
-})
+// tl2.from('#aboutMe',{
+//     duration:2,
+//     delay:0.5,
+//     opacity:0,
+//     ease:"power4.inOut",
+//     stagger:0.15,
+// })

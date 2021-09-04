@@ -75,3 +75,11 @@ addEventListener('mousemove',function(e){
 
     cursor.style.transform = `translate(${x}px,${y}px)`;
 })
+
+
+let aboutMeScroll = document.querySelector('#aboutMe');
+aboutMeScroll.addEventListener('wheel',e=>{
+    e.preventDefault();
+    let {deltaY} = e;
+    aboutMeScroll.scrollLeft += deltaY * 10;
+})
