@@ -1,3 +1,12 @@
+const preloader = document.getElementById('preloader');
+document.addEventListener('DOMContentLoaded',function(e){
+    document.body.classList.add('preloaderRemoved');
+})
+
+
+
+
+
 const section = document.querySelectorAll(".skewScroll");
 let currentPixel = window.pageYOffset
 

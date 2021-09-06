@@ -31,8 +31,78 @@ html,body{
     max-width: 100vw;
 }
 body{
+    overflow-y: hidden;
+    overflow-x:hidden;
     color: $white;
     font-family: $primary-font;
+    #preloader{
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: 50000000;
+        user-select: none;
+        pointer-events: none;
+        height: 100vh;
+        width:100vw;
+        background: $white;
+        display: grid;
+        place-items: center;
+        transform: translateY(0%);
+        transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+        h3{
+            color:transparent;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-size: 3.5rem;
+            
+            span{
+                font-family: $secondary-font;
+                -webkit-text-stroke: 2px $darkPurple;
+                opacity: 0;
+                animation: preloaderAnim 0.235s infinite alternate;
+
+                &:nth-child(2){
+                    animation-delay: 0.2s;
+                }
+                &:nth-child(3){
+                    animation-delay: 0.4s;
+                }
+                &:nth-child(4){
+                    animation-delay: 0.6s;
+                }
+                &:nth-child(5){
+                    animation-delay: 0.8s;
+                }
+                &:nth-child(6){
+                    animation-delay: 0.8s;
+                }
+                &:nth-child(7){
+                    animation-delay: 1s;
+                }
+            }
+        }
+    }
+    &.preloaderRemoved{
+        overflow-y: visible;
+        #preloader{
+            transform: translateY(-100%);
+        }
+    }
+}
+
+@keyframes preloaderAnim{
+    0%{
+        opacity: 0;
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        opacity: 1;
+        filter: hue-rotate(360deg);
+    }
+    100%{
+        opacity: 0;
+        filter: hue-rotate(0deg);
+    }
 }
 
 
@@ -234,10 +304,8 @@ main,section{
 @keyframes bannerMainAnim {
     from{
         filter: hue-rotate(0deg);
-        color: transparent;
     }
     to{
-        color: $pink;
         filter: hue-rotate(360deg);
     }
 }

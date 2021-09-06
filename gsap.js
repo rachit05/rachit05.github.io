@@ -8,7 +8,6 @@ let workBtn = document.querySelector('#scrollTo__work');
 let backToTopBtn = document.querySelector('#scroll__backToTop');
 
 
-
 gsap.from("main",{
     duration :3,
     opacity : 0,
