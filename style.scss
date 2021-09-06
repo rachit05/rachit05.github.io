@@ -23,7 +23,7 @@ $secondary-font : 'ZCOOL KuaiLe';
         background-color: $green;
         color: black;
     }
-
+    cursor: default;
 }
 
 html,body{
@@ -31,7 +31,6 @@ html,body{
     max-width: 100vw;
 }
 body{
-    background-color: $blue;
     color: $white;
     font-family: $primary-font;
 }
@@ -83,7 +82,7 @@ body{
     transform: translateX(-100%);
     transform-origin: left;
     pointer-events: none;
-    
+    z-index: 500;
 }
 #menu-f2{
     background: $yellow;
@@ -93,7 +92,6 @@ body{
     transform-origin: center bottom;
     display: grid;
     padding:50px 0;
-    z-index: 500;
     pointer-events: all;
     .menuLink{
         position: relative;
@@ -106,6 +104,8 @@ body{
         font-family: $secondary-font;
         cursor: pointer;
         visibility: hidden;
+        color: transparent;
+        -webkit-text-stroke: 2px white;
         span{
             position: absolute;
             display: inline-block;
@@ -124,10 +124,13 @@ body{
                 opacity: 0.1;
                 animation: menuLinkAnim infinite 40s linear;
             }
+            &:last-child{
+                color: $pink;
+            }
         }
         
         &:last-child{
-            color: $pink;
+            -webkit-text-stroke: 2px $pink;
         }
     }
     
@@ -143,23 +146,27 @@ body{
 
 #cursor{
     position: absolute;
-    width:20px;
-    height: 20px;
+    width:70px;
+    height: 70px;
     border-radius: 50%;
-    background-color: #a695df5e;
-    mix-blend-mode: difference;
-
-    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
-    z-index: 1000;
+    // background-color: white;
+    mix-blend-mode:difference;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    z-index: 10000;
     pointer-events: none;
     user-select: none;
+    display: grid;
+    place-items: center;
 }
 
 
 .wrapper{
     max-width: 100vw;
     overflow-x: hidden;
-
+    background-color: $blue;
+    // mix-blend-mode: screen;
 }
 
 a{
@@ -172,6 +179,7 @@ a{
 }
 
 nav{
+
     height: 150px;
     padding: 0 40px;
     display: grid;
@@ -201,13 +209,41 @@ nav{
 
 
 main,section{
-    
     padding:2rem 10rem;
     position: relative;
     min-height: 100vh;
     height:auto;
     transform-origin: left;
 }
+
+#bannerMain{
+    position: absolute;
+    top:25%;
+    left:0;
+    transform: translateY(-50%) ;
+    white-space: nowrap;
+    opacity: 0.2;
+    font-size: 25rem;
+    font-weight: bolder;
+    color: transparent;
+    -webkit-text-stroke:2px $pink;
+    transition: transform 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+    animation: bannerMainAnim 2s infinite alternate;
+}
+
+@keyframes bannerMainAnim {
+    from{
+        filter: hue-rotate(0deg);
+        color: transparent;
+    }
+    to{
+        color: $pink;
+        filter: hue-rotate(360deg);
+    }
+}
+
+
+
 #scrollIndicator{
     position: absolute;
     bottom: 20%;
@@ -257,7 +293,11 @@ main,section{
         display: inline-block;
         transition: all ease 0.5s;
         font-family: $secondary-font;
-        color: $green;        
+        color: transparent;
+        -webkit-text-stroke:1px $green;
+        &:hover{
+            color: $green;        
+        }
     }
     
 }
@@ -414,15 +454,47 @@ section{
     &:nth-child(4){
         background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
     }
+    &:nth-child(5){
+        background-image: linear-gradient(45deg, #fdff9a 0%, #c8fac4 99%, #c4f6fa 100%);
+    }
 
+    &:hover{
+        .cardNumber{
+            -webkit-text-stroke: 0px transparent;
+            color:rgba(0, 0, 0, 0.09);
+        }
+    }
+
+}
+.cardNumber{
+    transition: color 0.25s;
+    position: absolute;
+    top:40%;
+    left:0%;
+    transform: translate(-0%,-50%);
+    font-size: 15rem;
+    font-weight: bolder;
+    // color: rgba(0, 0, 0, 0.075);
+    color: transparent;
+    user-select: none;
+    pointer-events: none;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.09);
+}
+
+.cardHeader{
+    color: $darkPurple;
+    font-size: 1.2rem;
+    text-align: right;
+    i{
+        margin-right: 10px;
+    }
 }
 
 .cardName{
-    color: black;
     align-self: end;
     font-weight: 900;
     font-size: 2rem;
-    
+    color: black;
 }
 
 .cardList{
@@ -508,6 +580,9 @@ footer{
             justify-self: end;
         }
     }
+    #scroll__backToTop{
+        color: $green;
+    }
 }
 
 #me{
@@ -539,7 +614,7 @@ footer{
         animation: aboutImg infinite 6s linear alternate;
     }
 
-    #aboutMeRightArrow{
+    .aboutMeRightArrow{
         font-size: 1rem;
         font-family: $secondary-font;
         color: $off-white;
@@ -594,53 +669,48 @@ footer{
     }
 }
 
-#aboutMe{
-    height: 60vh;
-    width:100%;
-    white-space: nowrap;
-    overflow: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    // overflow-x: scroll;
-    span{
-        scroll-snap-align: center;
-        display: inline-grid;
-        margin-right: 20px;
-        height: 100%;
-        width: 100%;
-        align-items: center;
-        font-size: 4rem;
-        font-family: $secondary-font;
-        white-space: pre-line;
-        color: $off-white;
-        mix-blend-mode: screen;
-        &:last-child{
-            color: $white;
-            margin-right: 0px;
-        }
-    }
-}
 // #aboutMe{
-//     position:relative;
-//     z-index: 2;
-//     padding: 50px 0;
-//     font-size: 5rem;
-//     font-weight: bolder;
-//     font-family: $secondary-font;
-//     line-height: 6.5rem;
-//     // width: fit-content;
-//     overflow-x:scroll ;
+//     height: 60vh;
+//     width:100%;
 //     white-space: nowrap;
-//     background: #000;
-    
+//     overflow: hidden;
+//     scroll-snap-type: x mandatory;
+//     scroll-behavior: smooth;
+//     // overflow-x: scroll;
 //     span{
-//         display: block;
-//         white-space:normal;
+//         scroll-snap-align: center;
+//         display: inline-grid;
+//         margin-right: 20px;
+//         height: 100%;
+//         width: 100%;
+//         align-items: center;
+//         font-size: 4rem;
+//         font-family: $secondary-font;
+//         white-space: pre-line;
+//         color: $off-white;
+//         mix-blend-mode: screen;
 //         &:last-child{
 //             color: $white;
+//             margin-right: 0px;
 //         }
 //     }
 // }
+#aboutMe{
+    position:relative;
+    z-index: 2;
+    padding: 50px 0;
+    font-size: 5rem;
+    font-weight: bolder;
+    font-family: $secondary-font;
+    line-height: 6.5rem;
+    
+    color: $off-white;
+    span{
+        &:last-child{
+            color: $white;
+        }
+    }
+}
 
 
 
@@ -648,6 +718,11 @@ footer{
 
 .skewScroll{
     transition: transform 1.5s cubic-bezier(0.23, 1, 0.320, 1);
-    transform-origin: top left;
+    transform-origin: center;
     will-change: transform;
 }
+
+
+
+
+

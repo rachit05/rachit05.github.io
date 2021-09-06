@@ -26,6 +26,7 @@ let menuTimeline = gsap.timeline({});
 function toggleMenuClass(){
     if (menuTimeline.reversed()) {
         menuTimeline.play();
+        menuBtn.classList.toggle('menuOpen');
         return;
     }
     menuBtn.classList.toggle('menuOpen');
