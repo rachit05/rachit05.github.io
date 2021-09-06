@@ -118,3 +118,25 @@ addEventListener('mousemove',function(e){
 //     let {deltaY} = e;
 //     aboutMeScroll.scrollLeft += deltaY * 10;
 // })
+
+
+
+const mainCtaArr = document.querySelectorAll('.mainCTAText');
+
+mainCtaArr.forEach(mainCta => {
+    mainCta.addEventListener('click',function(e){
+        copy(e.target.innerText);
+    });
+})
+
+function copy(value){
+    navigator.clipboard.writeText(value);
+    let element = document.createElement('div');
+    element.innerHTML = `<p>Copied <span>${value}</span> to the clipboard!</p>`;
+    element.classList.add('copyMsg');
+    document.body.appendChild(element);
+
+    setTimeout(()=>{
+        element.remove();
+    },1500)
+}
