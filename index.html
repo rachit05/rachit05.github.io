@@ -15,11 +15,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+
     <script src="main.js" defer></script>
     <script src="gsap.js" defer></script>
+    <script src="canvas.js" defer></script>
 
 </head>
 <body>
+    <div id="canvas"></div>
     <div id="preloader">
         <h3>
             <span>r</span><span>a</span><span>c</span><span>h</span><span>i</span><span>t</span><span>.</span>
@@ -96,9 +100,11 @@
                     <div class="cardNumber">01</div>
                     <header class="cardHeader changeCursor" data-cursorMsg="01">
                         <i class="fab fa-github changeCursor" data-cursorMsg="github"></i>
-                        <i class="fas fa-external-link-alt changeCursor" data-cursorMsg="OPEN"></i>
+                        <a href="https://weathercast-fun.netlify.app/" target="new" style="all:unset">
+                            <i class="fas fa-external-link-alt changeCursor" data-cursorMsg="OPEN"></i>
+                        </a>
                     </header>
-                    <h2 class="cardName changeCursor" data-cursorMsg="01">Weather Cart.</h2>
+                    <h2 class="cardName changeCursor" data-cursorMsg="01">Weather Cast.</h2>
                     <ul class="cardList changeCursor" data-cursorMsg="01">
                         <li class="cardListItem">html/scss</li>
                         <li class="cardListItem">api</li>
