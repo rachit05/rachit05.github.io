@@ -53,4 +53,7 @@ function draw(){
         ellipse(points[i].x,points[i].y,1);
     
     }
+
+    stroke('rgba(255,255,255,.5')
+
 }
