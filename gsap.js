@@ -14,7 +14,7 @@ gsap.from("main",{
     skewY : "-10deg",
     x:"100px",
     y:"-50px",
-    delay: 2,
+    delay: 4,
     ease : "power4.inOut"
 })
 
