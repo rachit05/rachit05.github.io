@@ -16,7 +16,7 @@ gsap.from("main",{
     y:"-50px",
     delay: 4,
     ease : "power4.inOut"
-})
+});
 
 
 
@@ -42,7 +42,7 @@ function toggleMenuClass(){
         // skewY:"0deg",
         x:0,
         y:0,
-    })
+    });
     menuTimeline.fromTo('#menu-f2',{
         x:"-100%",
         y:"100%",
@@ -55,7 +55,7 @@ function toggleMenuClass(){
         // skewY:"0deg",
         x:0,
         y:0,
-    },'-=1.9')
+    },'-=1.9');
     menuTimeline.fromTo('#menu',{
         x:"-100%",
         y:"100%",
@@ -68,7 +68,7 @@ function toggleMenuClass(){
         // skewY:"0deg",
         x:0,
         y:0,
-    },'-=2.2')
+    },'-=2.2');
 
     menuTimeline.fromTo('.menuLink',{
         y:50,
@@ -83,14 +83,14 @@ function toggleMenuClass(){
         opacity:1,
         visibility:'visible',
         stagger:0.2
-    },"-=1.2")
+    },"-=1.2");
 }
 
 
 menuBtn.addEventListener('click',function(e){
     e.preventDefault();
     toggleMenuClass();
-})
+});
 
 
 menuCloseBtn.addEventListener('click',function(e){
@@ -98,7 +98,7 @@ menuCloseBtn.addEventListener('click',function(e){
     menuTimeline.reverse();
     menuBtn.classList.toggle('menuOpen');
 
-})
+});
 
 aboutMeBtn.addEventListener('click',function(e){
     e.preventDefault();
@@ -113,18 +113,18 @@ workBtn.addEventListener('click',function(e){
     menuBtn.classList.toggle('menuOpen');
 
     gsap.to(window,{duration:3,scrollTo:'#work',ease:'expo.inOut'});
-})
+});
 contactBtn.addEventListener('click',function(e){
     e.preventDefault();
     menuTimeline.reverse();
     menuBtn.classList.toggle('menuOpen');
 
     gsap.to(window,{duration:3,scrollTo:'#contact',ease:'expo.inOut'});
-})
+});
 backToTopBtn.addEventListener('click',function(e){
     e.preventDefault();
     gsap.to(window,{duration:3,scrollTo:'#topNavigation',ease:'expo.inOut'});
-})
+});
 
 
 
@@ -153,7 +153,7 @@ tl.from('.workCard',{
     opacity:0,
     ease:"power4.inOut",
     stagger:0.15,
-})
+});
 // tl2.from('#aboutMe',{
 //     duration:2,
 //     delay:0.5,

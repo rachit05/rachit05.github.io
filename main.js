@@ -3,20 +3,20 @@ document.addEventListener('DOMContentLoaded',function(e){
     setTimeout(() => {
         document.body.classList.add('preloaderRemoved');
     }, 4000);
-})
+});
 
 
 
 
 
 const section = document.querySelectorAll(".skewScroll");
-let currentPixel = window.pageYOffset
+let currentPixel = window.pageYOffset;
 
-console.log(currentPixel)
+console.log(currentPixel);
 //looper keeps running and keeps track of where the new pixel is
 const looper = function () {
     const newPixel = window.pageYOffset;
-    const diff = newPixel - currentPixel
+    const diff = newPixel - currentPixel;
     const speed = diff * 0.2;
 
 
@@ -32,8 +32,8 @@ const looper = function () {
         
     currentPixel = newPixel;
     
-    requestAnimationFrame(looper)
-}
+    requestAnimationFrame(looper);
+};
 
 looper();
 
@@ -52,7 +52,7 @@ me.addEventListener('mouseout',()=>{
     aboutImg.style.opacity = 0;
     setTimeout(()=>{
         aboutImg.style.visibility = "hidden";
-    },2500)
+    },2500);
 });
 
 me.addEventListener('mousemove',e=>{
@@ -60,24 +60,24 @@ me.addEventListener('mousemove',e=>{
     aboutImg.style.visibility = "visible";
     let {x,y} = e;
     x *= 0.05;
-    y *= 0.25
+    y *= 0.25;
     aboutImg.style.transform = `translate(${x-(imgWidth/2)}px,${y-(imgHeight/2)}px)`;
 
     
     // let aboutMeX = x * -1.5;
     // let aboutMeY = y * 0.3;
     // aboutMe.style.transform = `translate(${aboutMeX}px,${aboutMeY}px)`;
-})
+});
 
 
-let initOffset = pageYOffset
+let initOffset = pageYOffset;
 addEventListener('scroll',e=>{
     let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     let scrolled = (winScroll / height) * 100;
 
     document.getElementById('currentProgress').style.height = `${scrolled * 5}px`;
-})
+});
 
 
 
@@ -97,18 +97,18 @@ addEventListener('mousemove',function(e){
     if(target.classList.contains('changeCursor')){
         cursor.style.border = '2px solid white';
         cursor.style.background = 'black';
-        cursor.style.mixBlendMode = 'initial'
+        cursor.style.mixBlendMode = 'initial';
         cursor.innerHTML = target.getAttribute('data-cursorMsg');
     }
 
-})
+});
 
 
 const banner = document.querySelector('#bannerMain');
 
 addEventListener('mousemove',function(e){
     banner.style.transform = `translate(${-e.clientX * 2}px,-50%)`;
-})
+});
 
 
 
@@ -129,7 +129,7 @@ mainCtaArr.forEach(mainCta => {
     mainCta.addEventListener('click',function(e){
         copy(e.target.innerText);
     });
-})
+});
 
 function copy(value){
     navigator.clipboard.writeText(value);
@@ -140,5 +140,5 @@ function copy(value){
 
     setTimeout(()=>{
         element.remove();
-    },1500)
+    },1500);
 }
