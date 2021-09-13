@@ -39,12 +39,12 @@ body{
         position: absolute;
         top:0;
         left:0;
-        z-index: 50000000;
+        z-index: 999;
         user-select: none;
         pointer-events: none;
         height: 100vh;
         width:100vw;
-        background: $white;
+        background: $blue;
         display: grid;
         place-items: center;
         transform: translateY(0%);
@@ -805,12 +805,8 @@ footer{
     font-family: $secondary-font;
     line-height: 6.5rem;
     
-    color: $off-white;
-    span{
-        &:last-child{
-            color: $white;
-        }
-    }
+    color: $white;
+    
 }
 
 

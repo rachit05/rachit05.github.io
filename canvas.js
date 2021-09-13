@@ -9,7 +9,7 @@ function setup(){
     angleMode(DEGREES);
     noiseDetail(1);
     
-    let density = 20;
+    let density = 100;
     let space = width/density;
     
     for(let x=0 ; x<width ; x+=space){
@@ -42,11 +42,11 @@ function draw(){
         let r = map(points[i].x, 0, width, r1 ,r2);
         let g = map(points[i].y, 0, height, g1 ,g2);
         let b = map(points[i].x, 0, width, b1 ,b2);
-        let alpha = map(dist(width/2,height/2,points[i].x,points[i].y),0,width,height,0);
+        let alpha = map(dist(width/2,height/2,points[i].x,points[i].y),0,width,500,0);
         
-        fill(r,g,b,alpha*0.09)
+        fill(r,g,b,alpha * 0.06)
         
-        let angle = map(noise(points[i].x * mult,points[i].y * mult),0,0.2,0,1000);
+        let angle = map(noise(points[i].x * mult,points[i].y * mult),0,1,0,1000);
 
 
         points[i].add(createVector(cos(angle),sin(angle)))
