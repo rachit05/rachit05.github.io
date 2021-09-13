@@ -405,6 +405,13 @@ main, section {
           animation: bannerMainAnim 2s infinite alternate;
 }
 
+#bannerMain span {
+  color: black;
+  -webkit-animation: none;
+          animation: none;
+  -webkit-text-stroke: 0px transparent;
+}
+
 @-webkit-keyframes bannerMainAnim {
   from {
     -webkit-filter: hue-rotate(0deg);

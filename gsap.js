@@ -127,6 +127,10 @@ backToTopBtn.addEventListener('click',function(e){
 })
 
 
+
+
+
+
 let tl = gsap.timeline({
     scrollTrigger:{
         trigger:'#workDisplay',

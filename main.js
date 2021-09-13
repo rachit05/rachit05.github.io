@@ -1,6 +1,8 @@
 const preloader = document.getElementById('preloader');
 document.addEventListener('DOMContentLoaded',function(e){
-    document.body.classList.add('preloaderRemoved');
+    setTimeout(() => {
+        document.body.classList.add('preloaderRemoved');
+    }, 4000);
 })
 
 
