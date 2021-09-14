@@ -2,6 +2,8 @@ let points = [];
 let mult = 0.005;
 let r1,r2,g1,g2,b1,b2;
 
+
+
 function setup(){
     let cnv = createCanvas(windowWidth,windowHeight);
     cnv.parent('canvas');
@@ -54,6 +56,5 @@ function draw(){
     
     }
 
-    stroke('rgba(255,255,255,.5')
-
+    points.pop()
 }
