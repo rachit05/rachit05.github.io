@@ -4,7 +4,7 @@
 
 // $blue : #420FE7;
 $blue :#124673;
-$pink : #EEA1BE;
+$pink : #da6792;
 $green : #01ffdc;
 $darkPurple : #18033C;
 $white : #fff;
@@ -345,7 +345,7 @@ main,section{
         filter: hue-rotate(0deg);
     }
     to{
-        filter: hue-rotate(360deg);
+        filter: hue-rotate(90deg);
     }
 }
 
@@ -360,7 +360,7 @@ main,section{
     font-size: 0.8rem;
     font-weight: bolder;
     letter-spacing:2px;
-    color: $white;
+    color: $darkPurple;
 
     border-radius: 51% 49% 37% 63% / 61% 62% 38% 39% ;
     animation: scrlIndicator infinite 1.2s alternate cubic-bezier(0.215, 0.610, 0.355, 1);
@@ -439,8 +439,10 @@ main,section{
     overflow: hidden;
     font-weight: 700;
     color: $darkPurple;
+    z-index: 50000;
     div{
         height: 100%;
+        z-index: 50000;
         display: grid;
         align-items: center;
         justify-content: center;

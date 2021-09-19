@@ -59,7 +59,7 @@
 
 // }
 
-let spacing = 80;
+let spacing = 50;
 let x = 0, y = 0;
 function setup(){
     let cnv = createCanvas(windowWidth,windowHeight);
@@ -94,6 +94,11 @@ function draw(){
   if(x > width){
     x = 0;
     y += spacing;
+
+    if(y > height){
+      background(random(255),random(150),255)
+      y = 0;
+    }
   }
   
 }
