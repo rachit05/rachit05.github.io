@@ -67,7 +67,6 @@ function setup(){
     background(255);
 }
 function draw(){
-
   noFill();
   if(random(1) < 0.5){
     stroke(0,0,0);

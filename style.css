@@ -255,12 +255,18 @@ body.preloaderRemoved #preloader {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 100px;
-  font-size: 5rem;
+  font-size: 5vw;
   font-family: "ZCOOL KuaiLe";
   cursor: pointer;
   visibility: hidden;
   color: transparent;
   -webkit-text-stroke: 2px #18033C;
+}
+
+@media (max-width: 768px) {
+  #menu .menuLink {
+    font-size: 8vw;
+  }
 }
 
 #menu .menuLink span {
@@ -416,6 +422,12 @@ main, section {
           transform-origin: left;
 }
 
+@media (max-width: 768px) {
+  main, section {
+    padding: 2rem;
+  }
+}
+
 #bannerMain {
   position: absolute;
   top: 25%;
@@ -440,6 +452,12 @@ main, section {
   -webkit-animation: none;
           animation: none;
   -webkit-text-stroke: 0px transparent;
+}
+
+@media (max-width: 768px) {
+  #bannerMain {
+    display: none;
+  }
 }
 
 @-webkit-keyframes bannerMainAnim {
@@ -482,6 +500,12 @@ main, section {
           user-select: none;
 }
 
+@media (max-width: 768px) {
+  #scrollIndicator {
+    display: none;
+  }
+}
+
 @-webkit-keyframes scrlIndicator {
   to {
     bottom: 25%;
@@ -516,7 +540,7 @@ main, section {
 #mainLeadLine {
   position: relative;
   font-size: 4.5vw;
-  line-height: 7rem;
+  line-height: 8vw;
   margin-top: 20px;
   text-transform: capitalize;
   color: #18033C;
@@ -536,6 +560,14 @@ main, section {
   color: #124673;
 }
 
+@media (max-width: 768px) {
+  #mainLeadLine {
+    font-size: 4vw;
+    position: absolute;
+    left: 10vw;
+  }
+}
+
 #mainSubLead {
   font-family: "ZCOOL KuaiLe";
   text-transform: capitalize;
@@ -549,6 +581,20 @@ main, section {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  #mainSubLead {
+    font-size: 4vw;
+    position: absolute;
+    left: 0;
+    top: 20%;
+    width: 100vw;
+    padding: 2vw 8vw 0 10vw;
+    text-align: left;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
 }
 
 #mainCTA, .mainCTA {
@@ -571,6 +617,14 @@ main, section {
   font-weight: 700;
   color: #18033C;
   z-index: 50000;
+}
+
+@media (max-width: 768px) {
+  #mainCTA, .mainCTA {
+    width: 80vw;
+    left: 10vw;
+    margin-top: 2vh;
+  }
 }
 
 #mainCTA div, .mainCTA div {
@@ -724,9 +778,23 @@ section {
   background-image: linear-gradient(45deg, #fdff9a 0%, #c8fac4 99%, #c4f6fa 100%);
 }
 
+.workCard:hover {
+  background: #fff;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
 .workCard:hover .cardNumber {
   -webkit-text-stroke: 0px transparent;
   color: rgba(0, 0, 0, 0.09);
+}
+
+@media (max-width: 768px) {
+  .workCard {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+  }
 }
 
 .cardNumber {
@@ -1003,10 +1071,10 @@ footer #scroll__backToTop {
   position: relative;
   z-index: 2;
   padding: 50px 0;
-  font-size: 5rem;
+  font-size: 4.5vw;
   font-weight: bolder;
   font-family: "ZCOOL KuaiLe";
-  line-height: 6.5rem;
+  line-height: 6.5vw;
   color: #fff;
 }
 
