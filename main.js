@@ -80,12 +80,15 @@ addEventListener('scroll',e=>{
 });
 
 
-
+const horLine = document.getElementById('horLine');
+const verLine = document.getElementById('verLine');
 const cursor = document.querySelector('#cursor');
 addEventListener('mousemove',function(e){
-    let x = e.pageX;
-    let y = e.pageY;
+    let x = e.clientX;
+    let y = e.clientY;
     let target = e.target;
+    verLine.style.transform = `translateX(${x}px)`;
+    horLine.style.transform = `translateY(${y}px)`;
     x -= (cursor.getBoundingClientRect().width / 2);
     y -= (cursor.getBoundingClientRect().height / 2);
     
@@ -142,3 +145,7 @@ function copy(value){
         element.remove();
     },1500);
 }
+
+
+
+

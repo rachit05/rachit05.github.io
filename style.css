@@ -331,6 +331,25 @@ body.preloaderRemoved #preloader {
   place-items: center;
 }
 
+#horLine, #verLine {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.336);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+#horLine {
+  width: 100vw;
+  height: 1px;
+  left: 0;
+}
+
+#verLine {
+  width: 1px;
+  height: 100vh;
+  top: 0;
+}
+
 .wrapper {
   max-width: 100vw;
   overflow-x: hidden;
