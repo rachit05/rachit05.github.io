@@ -151,7 +151,7 @@ body.preloaderRemoved #preloader {
   z-index: 1000;
   border-radius: 100%;
   mix-blend-mode: darken;
-  opacity: 0.3;
+  opacity: 0.1;
   pointer-events: none;
 }
 
@@ -407,7 +407,7 @@ main, section {
   opacity: 0.2;
   font-size: 25rem;
   font-weight: bolder;
-  color: #727272;
+  color: #bba44e;
   -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.19, 1, 0.22, 1);
   transition: -webkit-transform 0.25s cubic-bezier(0.19, 1, 0.22, 1);
   transition: transform 0.25s cubic-bezier(0.19, 1, 0.22, 1);
@@ -417,7 +417,7 @@ main, section {
 }
 
 #bannerMain span {
-  color: #b3b3b3;
+  color: #26dd35;
   -webkit-animation: none;
           animation: none;
   -webkit-text-stroke: 0px transparent;

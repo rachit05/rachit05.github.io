@@ -116,7 +116,7 @@ body{
     // transform: translate(-50%,-50%);
     border-radius: 100%;
     mix-blend-mode:darken;
-    opacity: 0.3;
+    opacity: 0.1;
     pointer-events: none;
 }
 
@@ -329,12 +329,12 @@ main,section{
     font-size: 25rem;
     font-weight: bolder;
     // color: transparent;
-    color: rgb(114, 114, 114);
+    color: #bba44e;
     // -webkit-text-stroke:2px $pink;
     transition: transform 0.25s cubic-bezier(0.19, 1, 0.22, 1);
     animation: bannerMainAnim 2s infinite alternate;
     span{
-        color: rgb(179, 179, 179);
+        color: #26dd35;
         animation: none;
         -webkit-text-stroke:0px transparent;
     }
