@@ -678,6 +678,12 @@ main, section {
   border-left: 1px solid #124673;
 }
 
+@media (max-width: 768px) {
+  #mainCTA div:last-child, .mainCTA div:last-child {
+    font-size: 2.5vw;
+  }
+}
+
 #mainCTA:hover div:first-child::before, .mainCTA:hover div:first-child::before {
   -webkit-transform: translateY(0);
           transform: translateY(0);
@@ -734,6 +740,12 @@ section {
   width: 50%;
 }
 
+@media (max-width: 768px) {
+  .sectionSubLeadLine {
+    width: 100%;
+  }
+}
+
 #workDisplay, #contactOptions {
   padding: 50px 0 30px 0;
 }
@@ -749,6 +761,20 @@ section {
   margin: 0 30px 30px 0;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
+}
+
+@media (max-width: 768px) {
+  .workCard {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    height: 100px;
+    -ms-grid-columns: 1fr 5fr 4fr 2fr;
+        grid-template-columns: 1fr 5fr 4fr 2fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .workCard * {
@@ -795,14 +821,6 @@ section {
   color: rgba(0, 0, 0, 0.09);
 }
 
-@media (max-width: 768px) {
-  .workCard {
-    display: -ms-grid;
-    display: grid;
-    width: 100%;
-  }
-}
-
 .cardNumber {
   -webkit-transition: color 0.25s;
   transition: color 0.25s;
@@ -822,6 +840,15 @@ section {
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.09);
 }
 
+@media (max-width: 768px) {
+  .cardNumber {
+    all: unset;
+    font-size: 2.8vw;
+    color: #18033C;
+    font-weight: bolder;
+  }
+}
+
 .cardHeader {
   color: #18033C;
   font-size: 1.2rem;
@@ -830,6 +857,18 @@ section {
 
 .cardHeader i {
   margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .cardHeader {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+    font-size: 2.5vw;
+    color: #18033C;
+    font-weight: bolder;
+    margin-right: 0;
+  }
 }
 
 .cardName {
@@ -841,6 +880,17 @@ section {
   color: black;
 }
 
+@media (max-width: 768px) {
+  .cardName {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    color: #18033C;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+}
+
 .cardList {
   list-style-type: none;
   color: black;
@@ -848,11 +898,23 @@ section {
   margin-top: 30px;
 }
 
+@media (max-width: 768px) {
+  .cardList {
+    margin-top: 0;
+  }
+}
+
 .cardListItem {
   display: inline-block;
   margin: 0 20px 0 0;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 1vw;
+}
+
+@media (max-width: 768px) {
+  .cardListItem {
+    font-size: 1.5vw;
+  }
 }
 
 #contact {
@@ -880,6 +942,16 @@ section {
   border-left: 1px solid #01ffdc;
 }
 
+@media (max-width: 768px) {
+  #contactOptions .mainCTA {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    left: 0vw;
+    margin-top: 2vh;
+  }
+}
+
 #contactOptions #socialLinks {
   display: -ms-grid;
   display: grid;
@@ -887,6 +959,17 @@ section {
       grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  #contactOptions #socialLinks {
+    all: unset;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    gap: 20px;
+    margin-top: 50px;
+  }
 }
 
 #contactOptions a.socialLink {
@@ -929,6 +1012,12 @@ footer {
   grid-auto-flow: column;
 }
 
+@media (max-width: 768px) {
+  footer {
+    grid-auto-flow: row;
+  }
+}
+
 footer h3 {
   font-size: 1rem;
   font-family: "ZCOOL KuaiLe";
@@ -940,9 +1029,23 @@ footer h3 span {
   color: #eb5a5a;
 }
 
+@media (max-width: 768px) {
+  footer h3 {
+    font-size: 2.5vw;
+  }
+}
+
 footer div:last-child {
   -ms-grid-column-align: end;
       justify-self: end;
+}
+
+@media (max-width: 768px) {
+  footer div:last-child {
+    -ms-grid-column-align: start;
+        justify-self: start;
+    margin-top: 20px;
+  }
 }
 
 footer #scroll__backToTop {

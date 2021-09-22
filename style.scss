@@ -536,6 +536,10 @@ main,section{
         }
         &:last-child{
             border-left: 1px solid $blue;
+            @media (max-width: $breakpoint-tablet) {
+        
+                font-size: 2.5vw;
+            } 
         }
     }
 
@@ -597,6 +601,9 @@ section{
     line-height: 1.5rem;
     padding:20px 0;
     width:50%;
+    @media (max-width: $breakpoint-tablet) {
+        width: 100%;    
+    } 
 }
 
 #workDisplay,#contactOptions{
@@ -611,6 +618,15 @@ section{
     padding:30px;
     margin: 0 30px 30px 0;   
     transition: all 0.25s; 
+    @media (max-width: $breakpoint-tablet) {
+        display: grid;
+        width:100%;
+        height: 100px;
+        grid-template-columns: 1fr 5fr 4fr 2fr;
+        align-items: center;
+    }
+
+
     *{
         user-select: none;
     }
@@ -645,11 +661,6 @@ section{
             color:rgba(0, 0, 0, 0.09);
         }
     }
-
-    @media (max-width: $breakpoint-tablet) {
-        display: grid;
-        width:100%;
-    } 
 }
 .cardNumber{
     transition: color 0.25s;
@@ -664,6 +675,13 @@ section{
     user-select: none;
     pointer-events: none;
     -webkit-text-stroke: 1px rgba(0, 0, 0, 0.09);
+
+    @media (max-width: $breakpoint-tablet) {
+        all: unset;
+        font-size: 2.8vw;
+        color: $darkPurple;
+        font-weight: bolder;
+    }
 }
 
 .cardHeader{
@@ -673,6 +691,13 @@ section{
     i{
         margin-right: 10px;
     }
+    @media (max-width: $breakpoint-tablet) {
+        order: 4;
+        font-size: 2.5vw;
+        color: $darkPurple;
+        font-weight: bolder;
+        margin-right: 0;
+    }
 }
 
 .cardName{
@@ -680,6 +705,13 @@ section{
     font-weight: 900;
     font-size: 2rem;
     color: black;
+    
+    @media (max-width: $breakpoint-tablet) {
+        align-self: center;
+        color: $darkPurple;
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
 }
 
 .cardList{
@@ -687,12 +719,20 @@ section{
     color: black;
     text-transform: uppercase;
     margin-top: 30px;
+    @media (max-width: $breakpoint-tablet) {
+        margin-top: 0;
+    }
 }
 .cardListItem{
     display: inline-block;
     margin:0 20px 0 0;
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: 1vw;
+    
+    @media (max-width: $breakpoint-tablet) {
+        // margin-bottom: 10px;
+        font-size: 1.5vw;
+    }
 }
 
 #contact{
@@ -715,6 +755,12 @@ section{
                 border-left: 1px solid $green;
             }
         }
+        @media (max-width: $breakpoint-tablet) {
+            display: grid;
+            width: 100%;
+            left:0vw;
+            margin-top:2vh
+        } 
     }
 
     #socialLinks{
@@ -722,6 +768,13 @@ section{
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
         margin-top: 50px;
+        @media (max-width: $breakpoint-tablet) {
+            all: unset;
+            width: 100%;
+            display: grid;
+            gap: 20px;
+            margin-top: 50px;
+        } 
     }
     a.socialLink{   
         all:unset;
@@ -752,6 +805,9 @@ footer{
     padding:50px 0;
     display: grid;
     grid-auto-flow: column;
+    @media (max-width: $breakpoint-tablet) {
+        grid-auto-flow: row;
+    } 
     h3{
         font-size: 1rem;
         font-family: $secondary-font;
@@ -760,10 +816,18 @@ footer{
         span{
             color: rgb(235, 90, 90);
         }
+
+        @media (max-width: $breakpoint-tablet) {
+            font-size: 2.5vw;
+        }
     }
     div{
         &:last-child{
             justify-self: end;
+            @media (max-width: $breakpoint-tablet) {
+                justify-self: start;
+                margin-top: 20px;
+            } 
         }
     }
     #scroll__backToTop{
