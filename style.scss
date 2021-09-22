@@ -201,9 +201,12 @@ canvas{
     display: grid;
     padding:50px 0;
     pointer-events: all;
+    @media (max-width: $breakpoint-tablet) {
+        padding:50% 0;
+    } 
     .menuLink{
         @media (max-width: $breakpoint-tablet) {
-            font-size: 8vw;
+            font-size: 5vw;
         } 
         position: relative;
         display: grid;
@@ -238,6 +241,10 @@ canvas{
             &:last-child{
                 color: $pink;
             }
+            
+            @media (max-width: $breakpoint-tablet) {
+                letter-spacing: 2px;
+            } 
         }
         
         &:last-child{

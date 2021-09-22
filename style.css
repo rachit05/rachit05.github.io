@@ -249,6 +249,12 @@ canvas {
   pointer-events: all;
 }
 
+@media (max-width: 768px) {
+  #menu {
+    padding: 50% 0;
+  }
+}
+
 #menu .menuLink {
   position: relative;
   display: -ms-grid;
@@ -269,7 +275,7 @@ canvas {
 
 @media (max-width: 768px) {
   #menu .menuLink {
-    font-size: 8vw;
+    font-size: 5vw;
   }
 }
 
@@ -301,6 +307,12 @@ canvas {
 
 #menu .menuLink:hover:last-child {
   color: #da6792;
+}
+
+@media (max-width: 768px) {
+  #menu .menuLink:hover {
+    letter-spacing: 2px;
+  }
 }
 
 #menu .menuLink:last-child {
