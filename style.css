@@ -155,6 +155,10 @@ body.preloaderRemoved #preloader {
   pointer-events: none;
 }
 
+canvas {
+  pointer-events: none;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   background: white;
@@ -616,7 +620,6 @@ main, section {
   overflow: hidden;
   font-weight: 700;
   color: #18033C;
-  z-index: 50000;
 }
 
 @media (max-width: 768px) {
@@ -629,7 +632,6 @@ main, section {
 
 #mainCTA div, .mainCTA div {
   height: 100%;
-  z-index: 50000;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;

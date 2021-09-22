@@ -1,5 +1,5 @@
 const preloader = document.getElementById('preloader');
-document.addEventListener('DOMContentLoaded',function(e){
+document.addEventListener('DOMContentLoaded', function (e) {
     setTimeout(() => {
         document.body.classList.add('preloaderRemoved');
     }, 4000);
@@ -29,9 +29,9 @@ const looper = function () {
         //     rotateX(${-Math.round(speed * 10)}deg)
         // `;
     });
-        
+
     currentPixel = newPixel;
-    
+
     requestAnimationFrame(looper);
 };
 
@@ -43,27 +43,30 @@ const aboutMe = document.querySelector('#aboutMe');
 
 const imgWidth = aboutImg.getBoundingClientRect().width;
 const imgHeight = aboutImg.getBoundingClientRect().height;
-me.addEventListener('mouseenter',()=>{
+me.addEventListener('mouseenter', () => {
     aboutImg.style.opacity = 0.7;
     aboutImg.style.visibility = "visible";
 });
 
-me.addEventListener('mouseout',()=>{
+me.addEventListener('mouseout', () => {
     aboutImg.style.opacity = 0;
-    setTimeout(()=>{
+    setTimeout(() => {
         aboutImg.style.visibility = "hidden";
-    },2500);
+    }, 2500);
 });
 
-me.addEventListener('mousemove',e=>{
+me.addEventListener('mousemove', e => {
     aboutImg.style.opacity = 0.7;
     aboutImg.style.visibility = "visible";
-    let {x,y} = e;
+    let {
+        x,
+        y
+    } = e;
     x *= 0.05;
     y *= 0.25;
     aboutImg.style.transform = `translate(${x-(imgWidth/2)}px,${y-(imgHeight/2)}px)`;
 
-    
+
     // let aboutMeX = x * -1.5;
     // let aboutMeY = y * 0.3;
     // aboutMe.style.transform = `translate(${aboutMeX}px,${aboutMeY}px)`;
@@ -71,7 +74,7 @@ me.addEventListener('mousemove',e=>{
 
 
 let initOffset = pageYOffset;
-addEventListener('scroll',e=>{
+addEventListener('scroll', e => {
     let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     let scrolled = (winScroll / height) * 100;
@@ -83,21 +86,21 @@ addEventListener('scroll',e=>{
 const horLine = document.getElementById('horLine');
 const verLine = document.getElementById('verLine');
 const cursor = document.querySelector('#cursor');
-addEventListener('mousemove',function(e){
-    let x = e.clientX;
-    let y = e.clientY;
+addEventListener('mousemove', function (e) {
+    let x = e.pageX;
+    let y = e.pageY;
     let target = e.target;
-    verLine.style.transform = `translateX(${x}px)`;
-    horLine.style.transform = `translateY(${y}px)`;
+    verLine.style.transform = `translateX(${e.clientX}px)`;
+    horLine.style.transform = `translateY(${e.clientY}px)`;
     x -= (cursor.getBoundingClientRect().width / 2);
     y -= (cursor.getBoundingClientRect().height / 2);
-    
+
     cursor.style.transform = `translate(${x}px,${y}px)scale(1)`;
     cursor.style.background = 'transparent';
     cursor.innerHTML = '';
     cursor.style.border = 'none';
-    
-    if(target.classList.contains('changeCursor')){
+
+    if (target.classList.contains('changeCursor')) {
         cursor.style.border = '2px solid white';
         cursor.style.background = 'black';
         cursor.style.mixBlendMode = 'initial';
@@ -109,7 +112,7 @@ addEventListener('mousemove',function(e){
 
 const banner = document.querySelector('#bannerMain');
 
-addEventListener('mousemove',function(e){
+addEventListener('mousemove', function (e) {
     banner.style.transform = `translate(${-e.clientX * 2}px,-50%)`;
 });
 
@@ -129,23 +132,19 @@ addEventListener('mousemove',function(e){
 const mainCtaArr = document.querySelectorAll('.mainCTAText');
 
 mainCtaArr.forEach(mainCta => {
-    mainCta.addEventListener('click',function(e){
-        copy(e.target.innerText);
+    mainCta.addEventListener('click', function (e) {
+        copyText(e.target.innerText);
     });
 });
 
-function copy(value){
+function copyText(value) {
     navigator.clipboard.writeText(value);
     let element = document.createElement('div');
     element.innerHTML = `<p>Copied <span>${value}</span> to the clipboard!</p>`;
     element.classList.add('copyMsg');
     document.body.appendChild(element);
 
-    setTimeout(()=>{
+    setTimeout(() => {
         element.remove();
-    },1500);
+    }, 1500);
 }
-
-
-
-
