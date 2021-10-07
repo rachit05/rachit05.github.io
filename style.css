@@ -22,7 +22,8 @@
   color: black;
 }
 
-html, body {
+html,
+body {
   height: 100vh;
   max-width: 100vw;
 }
@@ -57,15 +58,15 @@ body #preloader {
 }
 
 body #preloader h3 {
-  color: transparent;
+  color: #124673;
   text-transform: capitalize;
   letter-spacing: 2px;
   font-size: 3.5rem;
 }
 
 body #preloader h3 span {
-  font-family: "Overpass";
-  -webkit-text-stroke: 2px #18033C;
+  font-family: "Arvo";
+  -webkit-text-stroke: 2px #124673;
   opacity: 0;
   -webkit-animation: preloaderAnim 2.5s infinite alternate;
           animation: preloaderAnim 2.5s infinite alternate;
@@ -113,36 +114,24 @@ body.preloaderRemoved #preloader {
 @-webkit-keyframes preloaderAnim {
   0% {
     opacity: 0;
-    -webkit-filter: hue-rotate(0deg);
-            filter: hue-rotate(0deg);
   }
   50% {
     opacity: 1;
-    -webkit-filter: hue-rotate(360deg);
-            filter: hue-rotate(360deg);
   }
   100% {
     opacity: 0;
-    -webkit-filter: hue-rotate(0deg);
-            filter: hue-rotate(0deg);
   }
 }
 
 @keyframes preloaderAnim {
   0% {
     opacity: 0;
-    -webkit-filter: hue-rotate(0deg);
-            filter: hue-rotate(0deg);
   }
   50% {
     opacity: 1;
-    -webkit-filter: hue-rotate(360deg);
-            filter: hue-rotate(360deg);
   }
   100% {
     opacity: 0;
-    -webkit-filter: hue-rotate(0deg);
-            filter: hue-rotate(0deg);
   }
 }
 
@@ -222,7 +211,9 @@ canvas {
   }
 }
 
-#menu, #menu-f1, #menu-f2 {
+#menu,
+#menu-f1,
+#menu-f2 {
   height: 100vh;
   width: 100vw;
   background-color: #fff;
@@ -355,7 +346,8 @@ canvas {
   place-items: center;
 }
 
-#horLine, #verLine {
+#horLine,
+#verLine {
   position: fixed;
   background: rgba(0, 0, 0, 0.336);
   z-index: 1000;
@@ -431,7 +423,8 @@ nav #navRight #nrRight a.menuOpen {
           transform: scale(0);
 }
 
-main, section {
+main,
+section {
   padding: 2rem 10rem;
   position: relative;
   min-height: 100vh;
@@ -441,7 +434,8 @@ main, section {
 }
 
 @media (max-width: 768px) {
-  main, section {
+  main,
+  section {
     padding: 2rem;
   }
 }
@@ -538,23 +532,6 @@ main, section {
   }
 }
 
-#mainTopLines {
-  position: relative;
-}
-
-#mainTopLines .line {
-  display: inline-block;
-  margin-right: 3rem;
-  font-family: "Overpass";
-  font-size: 3rem;
-  color: #01ffdc;
-  text-transform: capitalize;
-}
-
-#mainTopLines .line:last-child {
-  margin-right: 0;
-}
-
 #mainLeadLine {
   position: relative;
   font-size: 3.5vw;
@@ -569,7 +546,6 @@ main, section {
   display: inline-block;
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
-  font-family: "Overpass";
   color: transparent;
   -webkit-text-stroke: 1px #124673;
 }
@@ -587,7 +563,7 @@ main, section {
 }
 
 #mainSubLead {
-  font-family: "Overpass";
+  font-family: "Arvo";
   font-weight: 700;
   text-transform: capitalize;
   letter-spacing: 2px;
@@ -616,7 +592,8 @@ main, section {
   }
 }
 
-#mainCTA, .mainCTA {
+#mainCTA,
+.mainCTA {
   position: absolute;
   bottom: 30%;
   -webkit-transform: translateY(-50%);
@@ -638,14 +615,16 @@ main, section {
 }
 
 @media (max-width: 768px) {
-  #mainCTA, .mainCTA {
+  #mainCTA,
+  .mainCTA {
     width: 80vw;
     left: 10vw;
     margin-top: 2vh;
   }
 }
 
-#mainCTA div, .mainCTA div {
+#mainCTA div,
+.mainCTA div {
   height: 100%;
   display: -ms-grid;
   display: grid;
@@ -659,11 +638,13 @@ main, section {
   transition: all 0.25s ease;
 }
 
-#mainCTA div:first-child, .mainCTA div:first-child {
+#mainCTA div:first-child,
+.mainCTA div:first-child {
   position: relative;
 }
 
-#mainCTA div:first-child::before, .mainCTA div:first-child::before {
+#mainCTA div:first-child::before,
+.mainCTA div:first-child::before {
   position: absolute;
   content: 'Copy';
   width: 100%;
@@ -682,37 +663,41 @@ main, section {
   transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-#mainCTA div:first-child:hover::before, .mainCTA div:first-child:hover::before {
+#mainCTA div:first-child:hover::before,
+.mainCTA div:first-child:hover::before {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   opacity: 1;
   visibility: visible;
 }
 
-#mainCTA div:last-child, .mainCTA div:last-child {
+#mainCTA div:last-child,
+.mainCTA div:last-child {
   border-left: 1px solid #124673;
 }
 
 @media (max-width: 768px) {
-  #mainCTA div:last-child, .mainCTA div:last-child {
+  #mainCTA div:last-child,
+  .mainCTA div:last-child {
     font-size: 2.5vw;
   }
 }
 
-#mainCTA:hover div:first-child::before, .mainCTA:hover div:first-child::before {
+#mainCTA:hover div:first-child::before,
+.mainCTA:hover div:first-child::before {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   opacity: 1;
   visibility: visible;
 }
 
-#mainCTA:hover div:last-child, .mainCTA:hover div:last-child {
+#mainCTA:hover div:last-child,
+.mainCTA:hover div:last-child {
   font-size: 0.9rem;
 }
 
 section {
   padding-top: 5rem;
-  background: #18033C;
 }
 
 .sectionTitle {
@@ -761,7 +746,17 @@ section {
   }
 }
 
-#workDisplay, #contactOptions {
+#work {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e4f8c1), to(#e7a50f));
+  background: linear-gradient(#e4f8c1, #e7a50f);
+}
+
+#work .sectionLeadLine {
+  color: #18033C;
+}
+
+#workDisplay,
+#contactOptions {
   padding: 50px 0 30px 0;
 }
 
@@ -778,6 +773,8 @@ section {
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
   border-radius: 20px;
+  -webkit-box-shadow: 0 30px 20px -30px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 30px 20px -30px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 768px) {
@@ -831,9 +828,13 @@ section {
   background: #fff;
 }
 
+.workCard:hover .cardName {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
 .workCard:hover .cardNumber {
-  -webkit-text-stroke: 0px transparent;
-  color: rgba(0, 0, 0, 0.09);
+  font-size: 8rem;
 }
 
 .workCard:hover .card-desc {
@@ -841,6 +842,12 @@ section {
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+
+.workCard:hover .cardListItem {
+  opacity: 1;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
 }
 
 .workCard:hover::after {
@@ -872,22 +879,21 @@ section {
 }
 
 .cardNumber {
-  -webkit-transition: color 0.25s;
-  transition: color 0.25s;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
   position: absolute;
-  top: 40%;
-  left: 0%;
-  -webkit-transform: translate(0%, -50%);
-          transform: translate(0%, -50%);
-  font-size: 15rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 5rem;
   font-weight: bolder;
-  color: transparent;
+  color: rgba(0, 0, 0, 0.075);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   pointer-events: none;
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.09);
 }
 
 @media (max-width: 768px) {
@@ -921,12 +927,13 @@ section {
 }
 
 .cardName {
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 1rem;
   color: black;
+  -webkit-transform: translateY(200%);
+          transform: translateY(200%);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 @media (max-width: 768px) {
@@ -973,6 +980,16 @@ section {
   font-weight: 400;
   font-size: 1vw;
   font-family: "Overpass";
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  opacity: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.cardListItem:nth-of-type(odd) {
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
 }
 
 @media (max-width: 768px) {
@@ -982,7 +999,7 @@ section {
 }
 
 #contact {
-  background-color: #124673;
+  background: #124673;
   min-height: unset;
 }
 
@@ -1117,16 +1134,8 @@ footer #scroll__backToTop {
 }
 
 #me {
-  background-color: #e7a50f;
+  background: #e7a50f;
   position: relative;
-}
-
-#me .sectionTitle {
-  color: #18033C;
-}
-
-#me .sectionTitle::after {
-  background: #18033C;
 }
 
 #me img {
@@ -1141,37 +1150,12 @@ footer #scroll__backToTop {
   opacity: 0;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
-  -webkit-transition: opacity 0.25s,-webkit-transform 0.15s;
-  transition: opacity 0.25s,-webkit-transform 0.15s;
-  transition: opacity 0.25s,transform 0.15s;
-  transition: opacity 0.25s,transform 0.15s,-webkit-transform 0.15s;
+  -webkit-transition: opacity 0.25s, -webkit-transform 0.15s;
+  transition: opacity 0.25s, -webkit-transform 0.15s;
+  transition: opacity 0.25s, transform 0.15s;
+  transition: opacity 0.25s, transform 0.15s, -webkit-transform 0.15s;
   -webkit-animation: aboutImg infinite 6s linear alternate;
           animation: aboutImg infinite 6s linear alternate;
-}
-
-#me .aboutMeRightArrow {
-  font-size: 1rem;
-  font-family: "Overpass";
-  color: rgba(255, 255, 255, 0.322);
-  -webkit-animation: amraAnim infinite 4s;
-          animation: amraAnim infinite 4s;
-  position: relative;
-  cursor: default;
-}
-
-#me .aboutMeRightArrow:hover {
-  color: #fff;
-}
-
-#me .aboutMeRightArrow:hover::after {
-  position: absolute;
-  content: 'Use the mouse wheel';
-  left: 120%;
-  width: 150px;
-  height: 100%;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 @-webkit-keyframes amraAnim {
@@ -1244,11 +1228,17 @@ footer #scroll__backToTop {
   position: relative;
   z-index: 2;
   padding: 50px 0;
-  font-size: 4.5vw;
+  font-size: 2vw;
+  line-height: 3vw;
   font-weight: bolder;
-  font-family: "Overpass";
-  line-height: 6.5vw;
-  color: #fff;
+  font-family: "Arvo";
+  color: #fbebc7;
+}
+
+#aboutMe span {
+  display: inline-block;
+  color: #18033C;
+  margin-top: 50px;
 }
 
 .skewScroll {

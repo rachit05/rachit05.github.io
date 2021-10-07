@@ -21,13 +21,9 @@ const looper = function () {
 
 
     section.forEach(sec => {
-        sec.style.transform = `skewX(${speed * 0.12}deg) skewY(${speed}deg) translate(${speed}px,${speed}px)`;
-        // sec.style.transform = `
-        //     skewX(${speed * 0.12}deg)
-        //     translate(${speed}px,${speed}px)
-        //     scaleY(${Math.abs(1 - (speed * 0.025))})
-        //     rotateX(${-Math.round(speed * 10)}deg)
-        // `;
+        sec.style.transformOrigin = "left"
+        sec.style.transform = `skewX(${speed * 0.12}deg) skewY(${speed * 0.5}deg) translate(${speed}px,${speed}px)`;
+        
     });
 
     currentPixel = newPixel;
@@ -59,21 +55,16 @@ me.addEventListener('mousemove', e => {
     aboutImg.style.opacity = 0.7;
     aboutImg.style.visibility = "visible";
     let {
-        x,
-        y
+        clientX, clientY
     } = e;
-    x *= 0.05;
-    y *= 0.25;
-    aboutImg.style.transform = `translate(${x-(imgWidth/2)}px,${y-(imgHeight/2)}px)`;
+    clientX *= 0.05;
+    // clientY *= 0.5;
+    aboutImg.style.transform = `translate(${clientX-(imgWidth/2)}px,${clientY-(imgHeight/2)}px)`;
 
-
-    // let aboutMeX = x * -1.5;
-    // let aboutMeY = y * 0.3;
-    // aboutMe.style.transform = `translate(${aboutMeX}px,${aboutMeY}px)`;
 });
 
 
-let initOffset = pageYOffset;
+let initOffset = window.pageYOffset;
 addEventListener('scroll', e => {
     let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
