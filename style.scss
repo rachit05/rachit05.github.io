@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap');
 
 // $blue : #420FE7;
 $blue :#124673;
@@ -13,8 +15,9 @@ $yellow : #e7a50f;
 $cream : #e4f8c1;
 
 
-$primary-font : 'Montserrat';
-$secondary-font : 'ZCOOL KuaiLe';
+$primary-font : 'Arvo';
+// $secondary-font : 'ZCOOL KuaiLe';
+$secondary-font : 'Overpass';
 
 
 $breakpoint-tablet: 768px;
@@ -435,8 +438,8 @@ main,section{
 }
 #mainLeadLine{
     position: relative;
-    font-size: 4.5vw;
-    line-height:8vw;
+    font-size: 3.5vw;
+    line-height:6vw;
     margin-top: 20px;
     text-transform: capitalize;
     color: $darkPurple;
@@ -462,6 +465,7 @@ main,section{
 
 #mainSubLead{
     font-family: $secondary-font;
+    font-weight: 700;
     text-transform: capitalize;
     letter-spacing: 2px;
     line-height: calc(1.2*1.5);
@@ -618,6 +622,7 @@ section{
 }
 
 .workCard{
+    position:relative;
     width: 300px;
     height: 300px;
     display: inline-grid;
@@ -625,6 +630,8 @@ section{
     padding:30px;
     margin: 0 30px 30px 0;   
     transition: all 0.25s; 
+    border-radius: 20px;
+
     @media (max-width: $breakpoint-tablet) {
         display: grid;
         width:100%;
@@ -661,12 +668,42 @@ section{
 
     &:hover{
         background:$white;
-        filter: invert(1);  
-;
         .cardNumber{
             -webkit-text-stroke: 0px transparent;
             color:rgba(0, 0, 0, 0.09);
         }
+
+        .card-desc{
+            // display: block;
+            visibility: visible;
+            opacity:1;
+            transform: translateY(0);
+        }
+        &::after{
+            top:-20px;
+            left:20px;
+            background: rgba(255, 255, 255, 0.351);
+            transform: scale(1) skew(0deg,0deg);
+            // filter: invert(1);
+        }
+    }
+
+
+    &::after{
+        position: absolute;
+        content:'';
+        width:100%;
+        height:100%;
+        top:0px;
+        left:0px;
+        mix-blend-mode:darken;
+        border-radius: 20px;
+        transition: all 0.2s;
+        z-index:-1;
+        backdrop-filter: blur(10px);
+        transform: scale(0.8) skew(-10deg,-10deg);
+        transform-origin: top right;
+
     }
 }
 .cardNumber{
@@ -694,10 +731,10 @@ section{
 .cardHeader{
     color: $darkPurple;
     font-size: 1.2rem;
-    text-align: right;
-    i{
-        margin-right: 10px;
-    }
+    // text-align: right;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    
     @media (max-width: $breakpoint-tablet) {
         order: 4;
         font-size: 2.5vw;
@@ -712,6 +749,7 @@ section{
     font-weight: 900;
     font-size: 2rem;
     color: black;
+    // transform:translateY(100%);
     
     @media (max-width: $breakpoint-tablet) {
         align-self: center;
@@ -721,20 +759,35 @@ section{
     }
 }
 
+.card-desc{
+    color: rgba(0, 0, 0, 0.404);
+    font-size:1rem;
+    line-height: 1.5rem;
+    transform:translateY(-100%);
+    visibility:hidden;
+    opacity: 0;
+    transition: all 0.25s;
+    margin-top:20px;
+    // display:none;
+}
+
 .cardList{
     list-style-type: none;
     color: black;
     text-transform: uppercase;
     margin-top: 30px;
+    display:inline-grid;
+    grid-auto-flow: column;
     @media (max-width: $breakpoint-tablet) {
         margin-top: 0;
     }
 }
 .cardListItem{
-    display: inline-block;
-    margin:0 20px 0 0;
-    font-weight: 600;
+    // display: inline-block;
+    // margin:5px 20px 0 0;
+    font-weight: 400;
     font-size: 1vw;
+    font-family: $secondary-font;
     
     @media (max-width: $breakpoint-tablet) {
         // margin-bottom: 10px;
